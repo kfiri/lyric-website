@@ -1,0 +1,22 @@
+<nz-layout>
+  <nz-header [style.top]="-headerOffset + 'px'">
+    <app-header [isFloating]="headerOffset === 0"></app-header>
+  </nz-header>
+  <nz-content>
+    <app-midi-background [notes]="notes"></app-midi-background>
+    <div id="jumbotron" #jumbotron>
+      <nz-carousel nzAutoPlay>
+        <div nz-carousel-content *ngFor="let index of [1, 2, 3, 4, 5, 6]">
+          <h3>{{ index }}</h3>
+        </div>
+      </nz-carousel>
+      <div id="jumbotron-logo">
+        <img
+          src="https://cdn.discordapp.com/avatars/151090117979668480/7ce383da4068a428a601dd2b5e6f533d.png?size=64"
+        />
+      </div>
+    </div>
+    <app-songs-menu [songs]="songs"></app-songs-menu>
+  </nz-content>
+  <nz-footer>Footer</nz-footer>
+</nz-layout>

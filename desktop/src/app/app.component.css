@@ -1,0 +1,38 @@
+nz-header {
+  position: sticky;
+  z-index: 1; /* Dammit I hate z-index, but we need it so the header would be above the content. */
+  padding: 0; /* Override AntD header padding */
+  transition: top 0.2s ease-in-out;
+  transition: top 0.2s cubic-bezier(0.8, 0, 0.2, 1);
+}
+nz-content {
+  position: relative;
+  background: #192129;
+}
+#jumbotron-logo {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: fit-content;
+  pointer-events: visible;
+  border-radius: 50%;
+}
+#jumbotron-logo > img {
+  border-radius: 50%;
+}
+#songs-content {
+  padding: 15px 10vw 5px;
+}
+app-songs-menu {
+  padding: 15px 10vw 5px;
+}
+[nz-carousel-content] {
+  text-align: center;
+  height: 260px;
+  line-height: 160px;
+  background: #33538e;
+  color: #fff;
+  overflow: hidden;
+}

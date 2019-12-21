@@ -1,0 +1,30 @@
+<div id="header-content" nz-row>
+  <div nz-col nzSpan="8">
+    {{ isFloating ? "floating" : "fixed" }} Header Baby!!!!!!!!!!!!!!!!!!!!!!
+  </div>
+  <div nz-col nzSpan="8">
+    <nz-input-group [nzPrefix]="suffixIconSearch">
+      <input type="text" nz-input placeholder="Search..." />
+    </nz-input-group>
+    <ng-template #suffixIconSearch>
+      <i id="suffix-icon-search" nz-icon nzType="search" (click)="log()"></i>
+    </ng-template>
+  </div>
+  <div nz-col nzSpan="8">col-8</div>
+</div>
+<!--
+const cards = document.getElementById('cards');
+const songs = []
+for (let card of cards.children) {
+  const [imageDiv, contentDiv, revealDiv] = card.children;
+  const img = imageDiv.children[0].src;
+  let [{textContent: title}, {textContent: source}] = contentDiv.children;
+  title = title.trim();
+  source = source.trim();
+  let [,{children: [{textContent: composer}, {textContent: transcriber}]}] = revealDiv.children;
+  composer = composer.trim();
+  transcriber = transcriber.trim();
+  songs.push({img, title, source, composer, transcriber})
+}
+console.log(JSON.stringify(songs, null, 2));
+-->

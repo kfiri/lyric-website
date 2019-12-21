@@ -1,0 +1,20 @@
+<nz-card nzHoverable [nzCover]="coverTemplate">
+  <nz-card-meta [nzTitle]="song.title" [nzDescription]="cardDescription">
+    <ng-template #cardDescription
+      ><div
+        class="card-description"
+        nz-tooltip
+        nzTooltipTitle="prompt text"
+        [title]="song.source"
+      >
+        {{ song.source }}
+      </div></ng-template
+    >
+  </nz-card-meta>
+</nz-card>
+<ng-template #coverTemplate>
+  <div
+    class="card-cover-image"
+    [style.background-image]="'url(' + song.img + ')'"
+  ></div>
+</ng-template>

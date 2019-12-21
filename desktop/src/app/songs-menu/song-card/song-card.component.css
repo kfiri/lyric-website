@@ -1,0 +1,16 @@
+nz-card {
+  max-width: 350px;
+  margin: auto;
+}
+.card-description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-cover-image {
+  height: 150px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #fff;
+}

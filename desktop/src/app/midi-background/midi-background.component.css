@@ -1,0 +1,28 @@
+:host {
+    position: absolute;
+    display: flex;
+    flex-direction: column-reverse;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: hidden;
+}
+
+.midi-note {
+  position: absolute;
+  /* Length */
+  --note-length: 100;
+  height: calc(1px * var(--note-length));
+  width: 15px;
+  /* Timing */
+  --note-timing: 1300;
+  bottom: calc(1px * var(--note-timing));
+  /* Note */
+  --thick: 15px;
+  left: 50px;
+  /* Channel */
+  background: linear-gradient(to bottom, #e64646, #e446bf);
+  box-shadow: 0 -20px 30px #e64646, 0 20px 30px #e446bf;
+  border-radius: 3px;
+}

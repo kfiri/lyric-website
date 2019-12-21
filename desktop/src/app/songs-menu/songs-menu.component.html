@@ -1,0 +1,13 @@
+<nz-list
+  [nzDataSource]="songs"
+  [nzRenderItem]="item"
+  [nzGrid]="{ gutter: 16, xs: 24, sm: 24, md: 12, lg: 8, xl: 6, xxl: 6 }"
+>
+  <ng-template #item let-item>
+    <nz-list-item [nzContent]="nzContent">
+      <ng-template #nzContent>
+        <app-song-card [song]="item"></app-song-card>
+      </ng-template>
+    </nz-list-item>
+  </ng-template>
+</nz-list>

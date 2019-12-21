@@ -1,0 +1,9 @@
+<div id="midi-container">
+  <div
+    *ngFor="let note of notes"
+    [style.left]="15 * note.noteType + 'px'"
+    [style.bottom]="note.timing + 'px'"
+    [style.height]="note.length + 'px'"
+    class="midi-note"
+  ></div>
+</div>
