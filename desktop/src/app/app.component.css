@@ -11,21 +11,19 @@ nz-content {
 }
 #jumbotron-logo {
   position: absolute;
-  top: 15px;
+  top: 8px;
   left: 0;
   right: 0;
   margin: auto;
-  width: fit-content;
+  width: 64px;
   pointer-events: visible;
   border-radius: 50%;
 }
 #jumbotron-logo > img {
+  width: 64px;
   border-radius: 50%;
 }
 #songs-content {
-  padding: 15px 10vw 5px;
-}
-app-songs-menu {
   padding: 15px 10vw 5px;
 }
 [nz-carousel-content] {

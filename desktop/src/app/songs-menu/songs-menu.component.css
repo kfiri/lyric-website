@@ -1,3 +1,6 @@
 :host {
   display: block;
 }
+nz-list {
+  padding: 15px 10vw 5px;
+}
