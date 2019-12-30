@@ -10,7 +10,5 @@ export class MidiBackgroundComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-    console.log('calc(var(--thick) * ' + this.notes[0].noteType + ')');
-  }
+  ngOnInit() {}
 }
