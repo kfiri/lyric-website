@@ -2,10 +2,87 @@ nz-card {
   max-width: 350px;
   margin: auto;
 }
+
+nz-card > ::ng-deep.ant-card-cover {
+  position: relative;
+  overflow-y: hidden;
+}
+.card-cover-image-overlay {
+  cursor: pointer;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
+.card-cover-image-overlay > div {
+  position: relative;
+  height: 50%;
+  width: 100%;
+
+  /* Locate the ... above the overlay (=negetive the height) */
+  top: -50%;
+  /* Give the element a border radius from the bottom (50%) to the left and
+     right borders of the element (default value 0 - no border radius) */
+  border-bottom-right-radius: 50% 0;
+  border-bottom-left-radius: 50% 0;
+  /* The transition for the top and border values for when the overlay is hovered */
+  transition: all 0.2s ease-in-out;
+
+  background: linear-gradient(white 50%, hsla(0, 0%, 100%, 0.6));
+}
+.card-cover-image-overlay:hover > div {
+  /* Locate the ... within the overlay (=negetive half of the height) */
+  top: -25%;
+  /* Round the borders all the way to the middle of the ... (50%) */
+  border-bottom-right-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
+}
+.card-cover-image-overlay > div > div {
+  /* Position the ... in lower half of the ... */
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: -50%;
+  height: 50%;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* Center the content/text of the ... */
+  align-content: center;
+  text-align: center;
+  /* Pad the bottom of the ... by half of the font size */
+  padding-bottom: 0.5em;
+  
+  color: hsla(0, 0%, 30%, 1);
+  font-weight: 700; /* bold */
+  /* Do not allow the user to select the text (it's annoying) */
+  user-select: none;
+}
+
+nz-card > ::ng-deep.ant-card-body {
+  position: relative;
+  overflow: hidden;
+}
+/* Make the icons in the card actions to take the whole space,
+   because only the icons can invoke a click event. */
+:host ::ng-deep.ant-card-actions > li {
+  margin: 0;
+}
+:host ::ng-deep.ant-card-actions > li > span {
+  width: 100%;
+}
+:host ::ng-deep.ant-card-actions > li > span > i {
+  width: inherit;
+  padding: 9px 0;
+}
+
 .card-description {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: gray;
 }
 .card-cover-image {
   height: 150px;
@@ -13,4 +90,28 @@ nz-card {
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #fff;
+}
+
+.drawer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: -100%;
+  transition: bottom 0.2s ease-out;
+}
+.drawer.drawn {
+  bottom: 0;
+}
+.drawerDownload {
+  background-color: white;
+}
+
+i[nz-icon] {
+  color: #1890ff;
+  transition: filter 0.2s ease-in-out;
+}
+i[nz-icon]:hover {
+  filter: drop-shadow(0px 0px 1px #1890ffaa);
 }

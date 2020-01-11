@@ -1,20 +1,74 @@
-<nz-card nzHoverable [nzCover]="coverTemplate">
-  <nz-card-meta [nzTitle]="song.title" [nzDescription]="cardDescription">
-    <ng-template #cardDescription
-      ><div
+<nz-card [nzCover]="coverTemplate" [nzActions]="[actionShare, actionDownload]">
+  <nz-card-meta
+    [nzTitle]="song.title"
+    [nzDescription]="true ? cardDescription : false"
+  >
+    <ng-template #cardDescription>
+      <div
         class="card-description"
         nz-tooltip
         nzTooltipTitle="prompt text"
         [title]="song.source"
       >
         {{ song.source }}
-      </div></ng-template
-    >
+      </div>
+      <div
+        class="drawer drawerDownload"
+        [class.drawn]="openedDrawer === DRAWERS.DOWNLOAD"
+      >
+        <div nz-rownzType="flex" style="height: 50%;">
+          <div nz-col nzSpan="12" style="height: 100%; color: blue;">
+            <!-- TODO: add id to the link -->
+            <a>
+              <i nz-icon nzType="file-pdf" nzTheme="outline"></i>
+              <span>Sheets (PDF)</span>
+            </a>
+          </div>
+          <div nz-col nzSpan="12" style="height: 100%; color: blue;">
+            <!-- TODO: add id to the link -->
+            <a>
+              <i nz-icon nzType="file-markdown" nzTheme="outline"></i>
+              <span>MIDI</span>
+            </a>
+          </div>
+        </div>
+        <div nz-row nzType="flex" style="height: 50%;">
+          <div nz-col nzSpan="12" style="height: 100%; color: blue;">
+            <!-- TODO: add id to the link -->
+            <a>
+              <i nz-icon nzType="play-circle" nzTheme="outline"></i>
+              <span>open MP3 in browser</span>
+            </a>
+          </div>
+          <div nz-col nzSpan="12" style="height: 100%; color: blue;">
+            <!-- TODO: add id to the link -->
+            <a>
+              <i nz-icon nzType="youtube" nzTheme="outline"></i>
+              <span>Play On YouTube</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </ng-template>
   </nz-card-meta>
 </nz-card>
 <ng-template #coverTemplate>
+  <!-- TODO: add id to the link -->
+  <a class="card-cover-image-overlay">
+    <div>
+      <div>
+        Open Song Page
+      </div>
+    </div>
+  </a>
   <div
     class="card-cover-image"
     [style.background-image]="'url(' + song.img + ')'"
   ></div>
+</ng-template>
+<ng-template #actionShare>
+  <i nz-icon nzType="share-alt"></i>
+</ng-template>
+<ng-template #actionDownload>
+  <i nz-icon nzType="download" (click)="toggleDrawer(DRAWERS.DOWNLOAD)"></i>
 </ng-template>
