@@ -1,4 +1,4 @@
-<nz-card [nzCover]="coverTemplate" [nzActions]="[actionShare, actionDownload]">
+<nz-card [nzCover]="coverTemplate" [nzActions]="[actionDownload, actionShare]">
   <nz-card-meta
     [nzTitle]="song.title"
     [nzDescription]="true ? cardDescription : false"
@@ -13,7 +13,7 @@
         {{ song.source }}
       </div>
       <div
-        class="drawer drawerDownload"
+        class="drawer bottom"
         [class.drawn]="openedDrawer === DRAWERS.DOWNLOAD"
       >
         <div nz-rownzType="flex" style="height: 50%;">
@@ -66,9 +66,9 @@
     [style.background-image]="'url(' + song.img + ')'"
   ></div>
 </ng-template>
-<ng-template #actionShare>
-  <i nz-icon nzType="share-alt"></i>
-</ng-template>
 <ng-template #actionDownload>
   <i nz-icon nzType="download" (click)="toggleDrawer(DRAWERS.DOWNLOAD)"></i>
+</ng-template>
+<ng-template #actionShare>
+  <i nz-icon nzType="share-alt"></i>
 </ng-template>

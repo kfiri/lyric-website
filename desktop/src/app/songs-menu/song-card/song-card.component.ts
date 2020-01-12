@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from "@angular/core";
 
 enum Drawers {
-  SHARE,
-  DOWNLOAD
+  DOWNLOAD,
+  SHARE
 }
 
 @Component({

@@ -97,15 +97,25 @@ nz-card > ::ng-deep.ant-card-body {
   height: 100%;
   width: 100%;
   left: 0;
-  right: 0;
-  bottom: -100%;
-  transition: bottom 0.2s ease-out;
+  top: 0;
+  transition: left 0.2s ease-out, top 0.2s ease-out;
+  background-color: white;
+}
+.drawer.top {
+  top: -100%;
+}
+.drawer.bottom {
+  top: 100%;
+}
+.drawer.left {
+  left: -100%;
+}
+.drawer.right {
+  left: 100%;
 }
 .drawer.drawn {
-  bottom: 0;
-}
-.drawerDownload {
-  background-color: white;
+  top: 0;
+  left: 0;
 }
 
 i[nz-icon] {
