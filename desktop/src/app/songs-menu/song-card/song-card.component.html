@@ -13,40 +13,32 @@
         {{ song.source }}
       </div>
       <div
-        class="drawer bottom"
+        class="drawer bottom download-drawer"
         [class.drawn]="openedDrawer === DRAWERS.DOWNLOAD"
       >
-        <div nz-rownzType="flex" style="height: 50%;">
-          <div nz-col nzSpan="12" style="height: 100%; color: blue;">
-            <!-- TODO: add id to the link -->
-            <a>
-              <i nz-icon nzType="file-pdf" nzTheme="outline"></i>
-              <span>Sheets (PDF)</span>
-            </a>
-          </div>
-          <div nz-col nzSpan="12" style="height: 100%; color: blue;">
-            <!-- TODO: add id to the link -->
-            <a>
-              <i nz-icon nzType="file-markdown" nzTheme="outline"></i>
-              <span>MIDI</span>
-            </a>
-          </div>
+        <div nz-rownzType="flex">
+          <!-- TODO: add id to the link -->
+          <a nz-col nzSpan="12">
+            <i nz-icon nzType="file-pdf" nzTheme="outline"></i>
+            <span>Sheets (PDF)</span>
+          </a>
+          <!-- TODO: add id to the link -->
+          <a nz-col nzSpan="12">
+            <i nz-icon nzType="file-markdown" nzTheme="outline"></i>
+            <span>MIDI</span>
+          </a>
         </div>
-        <div nz-row nzType="flex" style="height: 50%;">
-          <div nz-col nzSpan="12" style="height: 100%; color: blue;">
-            <!-- TODO: add id to the link -->
-            <a>
-              <i nz-icon nzType="play-circle" nzTheme="outline"></i>
-              <span>open MP3 in browser</span>
-            </a>
-          </div>
-          <div nz-col nzSpan="12" style="height: 100%; color: blue;">
-            <!-- TODO: add id to the link -->
-            <a>
-              <i nz-icon nzType="youtube" nzTheme="outline"></i>
-              <span>Play On YouTube</span>
-            </a>
-          </div>
+        <div nz-row nzType="flex">
+          <!-- TODO: add id to the link -->
+          <a nz-col nzSpan="12">
+            <i nz-icon nzType="play-circle" nzTheme="outline"></i>
+            <span>open MP3 in browser</span>
+          </a>
+          <!-- TODO: add id to the link -->
+          <a nz-col nzSpan="12">
+            <i nz-icon nzType="youtube" nzTheme="outline"></i>
+            <span>Play On YouTube</span>
+          </a>
         </div>
       </div>
     </ng-template>
@@ -70,5 +62,5 @@
   <i nz-icon nzType="download" (click)="toggleDrawer(DRAWERS.DOWNLOAD)"></i>
 </ng-template>
 <ng-template #actionShare>
-  <i nz-icon nzType="share-alt"></i>
+  <i nz-icon nzType="share-alt" (click)="toggleDrawer(DRAWERS.SHARE)"></i>
 </ng-template>
