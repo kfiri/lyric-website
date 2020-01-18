@@ -1,405 +1,463 @@
 const SONGS = [
   {
-    img: "https://img.youtube.com/vi/P57u7-LwBfI/mqdefault.jpg",
+    urlId: "etude-of-a-songbird",
+    youtubeId: "P57u7-LwBfI",
     title: "Etude of a Songbird",
     source: "Breathe",
     composer: "Laura Platt",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/6tZPKke2ugI/mqdefault.jpg",
+    urlId: "goodbye-to-a-world",
+    youtubeId: "6tZPKke2ugI",
     title: "Goodbye To A World",
     source: "Porter Robinson",
     composer: "Porter Robinson",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/EerhhZ8cZtw/mqdefault.jpg",
+    urlId: "perfume",
+    youtubeId: "EerhhZ8cZtw",
     title: "Perfume",
     source: "fusq",
     composer: "fusq",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/c54P5qA-UP0/mqdefault.jpg",
+    urlId: "hot-milk",
+    youtubeId: "c54P5qA-UP0",
     title: "Hot Milk",
     source: "Snail's House",
     composer: "Snail's House",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/tJBtuw2Q75c/mqdefault.jpg",
+    urlId: "super-animal-theme",
+    youtubeId: "tJBtuw2Q75c",
     title: "Super Animal Theme",
     source: "Super Animal Royale",
     composer: "Jake Butineau",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/tOOwaMhC0BQ/mqdefault.jpg",
+    urlId: "exhale",
+    youtubeId: "tOOwaMhC0BQ",
     title: "Exhale",
     source: "Celeste",
     composer: "Lena Raine",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/xJxFl-mcK9U/mqdefault.jpg",
+    urlId: "sweet-sweet-canyon",
+    youtubeId: "xJxFl-mcK9U",
     title: "Sweet Sweet Canyon",
     source: "Mario Kart 8",
     composer: "Shiho Fujii",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/gH8vd4PpUJ0/mqdefault.jpg",
+    urlId: "marble-soda",
+    youtubeId: "gH8vd4PpUJ0",
     title: "Marble Soda",
     source: "Shawn Wasabi",
     composer: "Shawn Wasabi",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/iTUHx6kS7ws/mqdefault.jpg",
+    urlId: "right-now",
+    youtubeId: "iTUHx6kS7ws",
     title: "Right Now",
     source: "The Living Tombstone",
     composer: "The Living Tombstone",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/5YkPSWIOViM/mqdefault.jpg",
+    urlId: "rise",
+    youtubeId: "5YkPSWIOViM",
     title: "RISE",
     source: "League of Legends Worlds 2018",
     composer: "The Glitch Mob, Mako and The Word Alive",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/rTiGD4jm67M/mqdefault.jpg",
+    urlId: "-catgroove-piano-cover",
+    youtubeId: "rTiGD4jm67M",
     title: "Catgroove (Piano Cover)",
     source: "PandaTooth x LyricWulf",
     composer: "Parov Stelar",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/Wo4zW5MsBWs/mqdefault.jpg",
+    urlId: "ready-as-ill-ever-be",
+    youtubeId: "Wo4zW5MsBWs",
     title: "Ready as I'll Ever Be",
     source: "Tangled: The Series",
     composer: "Alan Menken",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/shi3yv-9n54/mqdefault.jpg",
+    urlId: "fish",
+    youtubeId: "shi3yv-9n54",
     title: "Fish",
     source: "JonKaGor",
     composer: "JonKaGor",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/iA7QEtwgti0/mqdefault.jpg",
+    urlId: "rush-lyric",
+    youtubeId: "iA7QEtwgti0",
     title: "Rush Lyric",
     source: "LyricWulf",
     composer: "Sheet Music Boss",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/YqM2xuqQqm4/mqdefault.jpg",
+    urlId: "we-deserve-to-shine",
+    youtubeId: "YqM2xuqQqm4",
     title: "We Deserve to Shine",
     source: "Steven Universe",
     composer: "Rebecca Sugar",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/LDK8i9pjtqs/mqdefault.jpg",
+    urlId: "moonsetter",
+    youtubeId: "LDK8i9pjtqs",
     title: "Moonsetter",
     source: "Homestuck",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/6rNG3ixpfEo/mqdefault.jpg",
+    urlId: "bubble-tea",
+    youtubeId: "6rNG3ixpfEo",
     title: "Bubble Tea",
     source: "dark cat",
     composer: "dark cat",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/Uj77rXONpJ0/mqdefault.jpg",
+    urlId: "pokemart-theme",
+    youtubeId: "Uj77rXONpJ0",
     title: "PokéMart Theme",
     source: "Pokémon Ruby/Sapphire/Emerald",
     composer: "Go Ichinose",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/9cj4BHlZ2UQ/mqdefault.jpg",
+    urlId: "paw-patrol-theme",
+    youtubeId: "9cj4BHlZ2UQ",
     title: "PAW Patrol Theme",
     source: "PAW Patrol",
     composer: "Little Ditto",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/CP6VZENSe5w/mqdefault.jpg",
+    urlId: "an-unwavering-heart",
+    youtubeId: "CP6VZENSe5w",
     title: "An Unwavering Heart",
     source: "Pokemon X/Y",
     composer: "Shota Kageyama",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/FentCyS1O5k/mqdefault.jpg",
+    urlId: "hello-world",
+    youtubeId: "FentCyS1O5k",
     title: "Hello World",
     source: "Louie Zong",
     composer: "Louie Zong",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/XGYyEiAjBf8/mqdefault.jpg",
+    urlId: "ruby-rider",
+    youtubeId: "XGYyEiAjBf8",
     title: "Ruby Rider",
     source: "Steven Universe",
     composer: "Jeff Liu",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/9jHUBuEZHbI/mqdefault.jpg",
+    urlId: "tribe-of-heavenly-kami",
+    youtubeId: "9jHUBuEZHbI",
     title: "Tribe of Heavenly Kami",
     source: "Ōkami",
     composer: "Rei Kondo",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/f_jjy5BlgjE/mqdefault.jpg",
+    urlId: "little-one",
+    youtubeId: "f_jjy5BlgjE",
     title: "Little One",
     source: "Detroit: Become Human",
     composer: "Philip Sheppard",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/yR7ahR5ouZI/mqdefault.jpg",
+    urlId: "dramophone",
+    youtubeId: "yR7ahR5ouZI",
     title: "Dramophone",
     source: "Caravan Palace",
     composer: "Caravan Palace",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/otW95iPB_LY/mqdefault.jpg",
+    urlId: "odd-future",
+    youtubeId: "otW95iPB_LY",
     title: "Odd Future",
     source: "My Hero Academia OP 4",
     composer: "Yuki Hayashi",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/itQD8B90tTk/mqdefault.jpg",
+    urlId: "arstotzkan-anthem",
+    youtubeId: "itQD8B90tTk",
     title: "Arstotzkan Anthem",
     source: "Papers, Please Main Theme",
     composer: "Lucas Pope",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/gF-9APdJkcI/mqdefault.jpg",
+    urlId: "pixel-galaxy",
+    youtubeId: "gF-9APdJkcI",
     title: "Pixel Galaxy",
     source: "Snail's House",
     composer: "Snail's House",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/4cI8JtjIMzo/mqdefault.jpg",
+    urlId: "yiay-piano-remix",
+    youtubeId: "4cI8JtjIMzo",
     title: "YIAY (Piano Remix)",
     source: "Jacksfilms",
     composer: "Jacksfilms",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/RxIrtUvr9G4/mqdefault.jpg",
+    urlId: "through-the-fire-and-flames",
+    youtubeId: "RxIrtUvr9G4",
     title: "Through the Fire and Flames",
     source: "Dragonforce",
     composer: "Dragonforce",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/4nGZDidTTz8/mqdefault.jpg",
+    urlId: "mii-plaza",
+    youtubeId: "4nGZDidTTz8",
     title: "Mii Plaza",
     source: "Mii Channel Theme",
     composer: "Kazumi Totaka",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/QyCsLINxijc/mqdefault.jpg",
+    urlId: "the-eevee-song",
+    youtubeId: "QyCsLINxijc",
     title: "The Eevee Song",
     source: "Random Encounters",
     composer: "Random Encounters",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/m6-yxp2Cygg/mqdefault.jpg",
+    urlId: "issuns-theme",
+    youtubeId: "m6-yxp2Cygg",
     title: "Issun's Theme",
     source: "Okami",
     composer: "Hiroshi Yamaguchi",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/XOxowDPJBt8/mqdefault.jpg",
+    urlId: "blueshift",
+    youtubeId: "XOxowDPJBt8",
     title: "Blueshift",
     source: "Exurb1a",
     composer: "Exurb1a",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/GegS8INc3ps/mqdefault.jpg",
+    urlId: "parasailing-minigame",
+    youtubeId: "GegS8INc3ps",
     title: "Parasailing Minigame",
     source: "Breath of the Wild",
     composer: "Manaka Kataoka",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/DhljN7BbEas/mqdefault.jpg",
+    urlId: "no-surprises-piano-stride",
+    youtubeId: "DhljN7BbEas",
     title: "No Surprises (Piano Stride)",
     source: "Westworld",
     composer: "Ramin Djawadi",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/gXIvln7Kwrg/mqdefault.jpg",
+    urlId: "cold",
+    youtubeId: "gXIvln7Kwrg",
     title: "Cold",
     source: "RWBY",
     composer: "Jeff Williams",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/ORapqw2ru4M/mqdefault.jpg",
+    urlId: "shelter",
+    youtubeId: "ORapqw2ru4M",
     title: "Shelter",
     source: "Porter Robinson & Madeon",
     composer: "Porter Robinson & Madeon",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/3OKSroKAK88/mqdefault.jpg",
+    urlId: "believer",
+    youtubeId: "3OKSroKAK88",
     title: "Believer",
     source: "Imagine Dragons",
     composer: "Imagine Dragons",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/10Ry2uOnXoo/mqdefault.jpg",
+    urlId: "the-dog-wrestler-waltz",
+    youtubeId: "10Ry2uOnXoo",
     title: "The Dog Wrestler Waltz",
     source: "Exurb1a",
     composer: "Exurb1a",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/RQmQ3xBoGeo/mqdefault.jpg",
+    urlId: "the-wolf",
+    youtubeId: "RQmQ3xBoGeo",
     title: "The Wolf",
     source: "SIAMÉS",
     composer: "SIAMÉS",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/51aAXlEfwYg/mqdefault.jpg",
+    urlId: "battle-zinnia",
+    youtubeId: "51aAXlEfwYg",
     title: "Battle! Zinnia",
     source: "Pokemon ORAS",
     composer: "Shota Kageyama",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/y8ok8geXiNk/mqdefault.jpg",
+    urlId: "otter-pop",
+    youtubeId: "y8ok8geXiNk",
     title: "Otter Pop",
     source: "Shawn Wasabi",
     composer: "Shawn Wasabi",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/tXFPo6LXfuU/mqdefault.jpg",
+    urlId: "phase-2",
+    youtubeId: "tXFPo6LXfuU",
     title: "Phase 2",
     source: "Disbelief Papyrus",
     composer: "JimmyTheBassist",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/Gx47FE1Soww/mqdefault.jpg",
+    urlId: "lone-digger",
+    youtubeId: "Gx47FE1Soww",
     title: "Lone Digger",
     source: "‹ |°_°| ›",
     composer: "Caravan Palace",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/rBeang8p74I/mqdefault.jpg",
+    urlId: "demolitale-main-theme",
+    youtubeId: "rBeang8p74I",
     title: "Demolitale Main Theme",
     source: "Demolitale",
     composer: "LyricWulf",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/61WsFfTzOQg/mqdefault.jpg",
+    urlId: "the-calm",
+    youtubeId: "61WsFfTzOQg",
     title: "The Calm",
     source: "LyricWulf Original Song",
     composer: "Wulfenite",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/JG-ujtkrdOg/mqdefault.jpg",
+    urlId: "ironic",
+    youtubeId: "JG-ujtkrdOg",
     title: "Ironic",
     source: "Words Words Words",
     composer: "Bo Burnham",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/QQB1OKkMda4/mqdefault.jpg",
+    urlId: "forlorn",
+    youtubeId: "QQB1OKkMda4",
     title: "Forlorn",
     source: "Undertale Yellow",
     composer: "MyNewSoundtrack, Master Sword",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/WjyOEdFn4qg/mqdefault.jpg",
+    urlId: "final-chance",
+    youtubeId: "WjyOEdFn4qg",
     title: "Final Chance",
     source: "Undertale AU",
     composer: "Fanmade UNDERTALE AU",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/7GwtK2DXbFk/mqdefault.jpg",
+    urlId: "aviator",
+    youtubeId: "7GwtK2DXbFk",
     title: "Aviator",
     source: "OneShot Soundtrack",
     composer: "Nightmargin",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/jwjPmjqcFTI/mqdefault.jpg",
+    urlId: "moonmen",
+    youtubeId: "jwjPmjqcFTI",
     title: "Moonmen",
     source: "Pocket Mortys OST",
     composer: "Ryan Elder",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/5HZEorKnWcM/mqdefault.jpg",
+    urlId: "mogolovonio-mp3",
+    youtubeId: "5HZEorKnWcM",
     title: "MOGOLOVONIO.MP3",
     source: "april fool to you",
     composer: "SR POLO & TOBO FOOX",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/2vq--uOOpwM/mqdefault.jpg",
+    urlId: "niko-and-the-world-machine",
+    youtubeId: "2vq--uOOpwM",
     title: "Niko and the World Machine",
     source: "OneShot Soundtrack",
     composer: "Nightmargin (Casey Gu)",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/p28uVJ_7tWY/mqdefault.jpg",
+    urlId: "to-the-gateway",
+    youtubeId: "p28uVJ_7tWY",
     title: "To the Gateway",
     source: "Super Mario Galaxy",
     composer: "Mahito Yokota",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/FD-ictCbjJA/mqdefault.jpg",
+    urlId: "we-are-number-one",
+    youtubeId: "FD-ictCbjJA",
     title: "We Are Number One",
     source: "LazyTown",
     composer: "MÃ¡ni Svavarsson",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/4k2DZw5S1cs/mqdefault.jpg",
+    urlId: "underline",
+    youtubeId: "4k2DZw5S1cs",
     title: "Underline",
     source: "Fanmade UNDERTALE AU",
     composer: "Xalia",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/AB08g5EEcjI/mqdefault.jpg",
+    urlId: "megalovania-fandom-medley",
+    youtubeId: "AB08g5EEcjI",
     title: "MegaloVania FANDOM MEDLEY",
     source:
       "Fanmade UNDERTALE AU, Homestuck, Gravity Falls, Smash, FNAF, Doctor Who, Steven Universe, Adventure Time, Gumball, and Star vs. the Forces of Evil!",
@@ -407,98 +465,112 @@ const SONGS = [
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/HaNAOj32TfE/mqdefault.jpg",
+    urlId: "ewe",
+    youtubeId: "HaNAOj32TfE",
     title: "ewe",
     source: "LyricWulf Original Composition",
     composer: "LyricWulf",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/29_Ti5xVBEI/mqdefault.jpg",
+    urlId: "champion-cynthia",
+    youtubeId: "29_Ti5xVBEI",
     title: "Champion Cynthia",
     source: "PokÃ©mon Diamond & PokÃ©mon Pearl: Super Music Collection",
     composer: "Go Ichinose",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/cHLhC8Od5JU/mqdefault.jpg",
+    urlId: "waterfall",
+    youtubeId: "cHLhC8Od5JU",
     title: "Waterfall",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/jo1mvfNW630/mqdefault.jpg",
+    urlId: "karlas-lullaby",
+    youtubeId: "jo1mvfNW630",
     title: "Karla's Lullaby",
     source: "Words",
     composer: "Louie Zong",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/se7K-3eHMjo/mqdefault.jpg",
+    urlId: "fourteen-residents",
+    youtubeId: "se7K-3eHMjo",
     title: "Fourteen Residents",
     source: "OFF",
     composer: "Alias Conrad Coldwood",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/JBWMn3CdPN8/mqdefault.jpg",
+    urlId: "hypnotik",
+    youtubeId: "JBWMn3CdPN8",
     title: "HYPNOTIK",
     source: "KiseijÅ« Sei no Kakuritsu (Parasyte -the maxim-)",
     composer: "Ken Arai",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/X2N3XvZCpIc/mqdefault.jpg",
+    urlId: "supermoon",
+    youtubeId: "X2N3XvZCpIc",
     title: "Supermoon",
     source: "No Man's Sky: Music for an Infinite Universe",
     composer: "65daysofstatic",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/kyoTZQ-VSt4/mqdefault.jpg",
+    urlId: "again",
+    youtubeId: "kyoTZQ-VSt4",
     title: "Again",
     source: "Shigatsu wa Kimi no Uso (Your Lie in April)",
     composer: "Masaru Yokoyama",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/2-cFJEqIrVk/mqdefault.jpg",
+    urlId: "just-3-days",
+    youtubeId: "2-cFJEqIrVk",
     title: "Just 3 Days",
     source: "Majora's Mask Song",
     composer: "MandoPony",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/waLTe4j4LjE/mqdefault.jpg",
+    urlId: "amarillo",
+    youtubeId: "waLTe4j4LjE",
     title: "Amarillo",
     source: "The Fall",
     composer: "Gorillaz",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/C3SykOb6aqo/mqdefault.jpg",
+    urlId: "land-of-hints",
+    youtubeId: "C3SykOb6aqo",
     title: "Land of Hints",
     source: "LISA the Joyful Soundtrack",
     composer: "Widdly 2 Diddly",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/spIWGAnp_3w/mqdefault.jpg",
+    urlId: "deep-piano",
+    youtubeId: "spIWGAnp_3w",
     title: "#Deep [Piano]",
     source: "what.",
     composer: "Bo Burnham",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/KkVff0gxC2c/mqdefault.jpg",
+    urlId: "deep-piano-and-voice",
+    youtubeId: "KkVff0gxC2c",
     title: "#Deep [Piano and Voice]",
     source: "what.",
     composer: "Bo Burnham",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/FoEB9mgrMzI/mqdefault.jpg",
+    urlId: "wishing",
+    youtubeId: "FoEB9mgrMzI",
     title: "Wishing",
     source:
       "Re:Zero kara Hajimeru Isekai Seikatsu (Starting Life in Another World)",
@@ -506,749 +578,856 @@ const SONGS = [
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/lPbxlkO3KVE/mqdefault.jpg",
+    urlId: "edgy-sans-is-edgy",
+    youtubeId: "lPbxlkO3KVE",
     title: "Edgy Sans is Edgy",
     source: "Fanmade UNDERTALE AU",
     composer: "Jeffrey Watkins",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/ope9jAWeu80/mqdefault.jpg",
+    urlId: "how-far-ill-go",
+    youtubeId: "ope9jAWeu80",
     title: "How Far I'll Go",
     source: "Moana (Original Motion Picture Soundtrack)",
     composer: "Lin-Manuel Miranda",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/oAWO56Bl5FA/mqdefault.jpg",
+    urlId: "lazy-afternoons",
+    youtubeId: "oAWO56Bl5FA",
     title: "Lazy Afternoons",
     source: "Kingdom Hearts Piano Collections",
     composer: "Yoko Shimomura, Sachiko Miyano",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/7HtaJKneBMk/mqdefault.jpg",
+    urlId: "sugar-coma-foxtrot",
+    youtubeId: "7HtaJKneBMk",
     title: "Sugar Coma Foxtrot",
     source: "HOME OST",
     composer: "xLightningWolFx",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/wOWe33No8m0/mqdefault.jpg",
+    urlId: "death-by-glamour",
+    youtubeId: "wOWe33No8m0",
     title: "Death by Glamour",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/q_JvkaHLPvQ/mqdefault.jpg",
+    urlId: "let-it-be",
+    youtubeId: "q_JvkaHLPvQ",
     title: "Let It Be",
     source: "Miracle",
     composer: "Blackmill",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/0C5xp2WKKdM/mqdefault.jpg",
+    urlId: "heartache",
+    youtubeId: "0C5xp2WKKdM",
     title: "Heartache",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/2PtQZlbp5CY/mqdefault.jpg",
+    urlId: "battle-against-a-true-parent",
+    youtubeId: "2PtQZlbp5CY",
     title: "Battle Against a True Parent",
     source: "Fanmade UNDERTALE AU",
     composer: "Whirligig231",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/3ud93T3-Mgs/mqdefault.jpg",
+    urlId: "bonetrousle-underswap",
+    youtubeId: "3ud93T3-Mgs",
     title: "Bonetrousle (Underswap)",
     source: "Fanmade UNDERTALE AU",
     composer: "nerdylizardeperson",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/ghwlmbHDQMw/mqdefault.jpg",
+    urlId: "mother-earth",
+    youtubeId: "ghwlmbHDQMw",
     title: "Mother Earth",
     source: "Mother 1+2",
     composer: "Hirokazu Tanaka",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/CGBLjkg2-_8/mqdefault.jpg",
+    urlId: "outset-island",
+    youtubeId: "CGBLjkg2-_8",
     title: "Outset Island",
     source: "The Legend of Zelda: The Wind Waker",
     composer: "Kenta Nagata, Hajime Wakai, Toru Minegishi, Koji Kondo",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/KmBiqJCpGUU/mqdefault.jpg",
+    urlId: "backbone",
+    youtubeId: "KmBiqJCpGUU",
     title: "Backbone",
     source: "Fanmade UNDERTALE AU",
     composer: "Sean Evans [Lone]",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/_Dda2PebeIA/mqdefault.jpg",
+    urlId: "bonetrousle",
+    youtubeId: "_Dda2PebeIA",
     title: "Bonetrousle",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/-wZHV13hrvc/mqdefault.jpg",
+    urlId: "foxs-forgotten-love-krystal",
+    youtubeId: "-wZHV13hrvc",
     title: "Fox's Forgotten Love, Krystal",
     source: "Star Fox Command",
     composer: "Hajime Wakai",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/zF6R3bMRWOU/mqdefault.jpg",
+    urlId: "showtime-piano-refrain",
+    youtubeId: "zF6R3bMRWOU",
     title: "Showtime (Piano Refrain)",
     source: "Homestuck Vol. 1â€‹-â€‹4",
     composer: "Malcolm Brown, Kevin Regamey",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/qyIXXFL3I2w/mqdefault.jpg",
+    urlId: "thundersnail",
+    youtubeId: "qyIXXFL3I2w",
     title: "Thundersnail",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/3qqfUe_-jZA/mqdefault.jpg",
+    urlId: "hes-my-dad",
+    youtubeId: "3qqfUe_-jZA",
     title: "He's My Dad",
     source: "LISA the Joyful Soundtrack",
     composer: "Widdly 2 Diddly",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/MZdogDXQJm0/mqdefault.jpg",
+    urlId: "art-is-dead-piano",
+    youtubeId: "MZdogDXQJm0",
     title: "art is dead. [Piano]",
     source: "Words Words Words",
     composer: "Bo Burnham",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/Rn0Zso6u7mI/mqdefault.jpg",
+    urlId: "nyeh-heh-heh-bonetrousle",
+    youtubeId: "Rn0Zso6u7mI",
     title: "Nyeh Heh Heh! & Bonetrousle",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/BSg0UD51Rhs/mqdefault.jpg",
+    urlId: "art-is-dead-piano-and-voice",
+    youtubeId: "BSg0UD51Rhs",
     title: "art is dead. [Piano and Voice]",
     source: "Words Words Words",
     composer: "Bo Burnham",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/_Xr-hIdP_yQ/mqdefault.jpg",
+    urlId: "unnecessary-tension",
+    youtubeId: "_Xr-hIdP_yQ",
     title: "Unnecessary Tension",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/P6nz4-PHQbk/mqdefault.jpg",
+    urlId: "wrong-enemy",
+    youtubeId: "P6nz4-PHQbk",
     title: "Wrong Enemy ?!",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/MrN4UpxhsxE/mqdefault.jpg",
+    urlId: "live-death-report",
+    youtubeId: "MrN4UpxhsxE",
     title: "Live & Death Report",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/sYOF1eJiZtk/mqdefault.jpg",
+    urlId: "shes-playing-piano",
+    youtubeId: "sYOF1eJiZtk",
     title: "She's Playing Piano",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/GuLhZRzAlzc/mqdefault.jpg",
+    urlId: "snow-fairy",
+    youtubeId: "GuLhZRzAlzc",
     title: "Snow Fairy",
     source: "Fairy Tail",
     composer: "FUNKIST, NateWantsToBattle",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/ZKYIylDO5_I/mqdefault.jpg",
+    urlId: "oh-one-true-love",
+    youtubeId: "ZKYIylDO5_I",
     title: "Oh! One True Love",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/uGQTVGUso9k/mqdefault.jpg",
+    urlId: "gourmet-race",
+    youtubeId: "uGQTVGUso9k",
     title: "Gourmet Race",
     source: "Kirby Super Star",
     composer: "Jun Ishikawa, Dan Miyakawa",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/ok3O805bfAM/mqdefault.jpg",
+    urlId: "lower-your-expectations-piano",
+    youtubeId: "ok3O805bfAM",
     title: "Lower Your Expectations [Piano]",
     source: "Make Happy",
     composer: "Bo Burnham",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/bu5SF_xk8bw/mqdefault.jpg",
+    urlId: "histrousle",
+    youtubeId: "bu5SF_xk8bw",
     title: "Histrousle",
     source: "Fanmade UNDERTALE AU",
     composer: "Keno9988ii",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/2pLJ00yWlZo/mqdefault.jpg",
+    urlId: "ori-lost-in-the-storm",
+    youtubeId: "2pLJ00yWlZo",
     title: "Ori, Lost in the Storm",
     source: "Ori and the Blind Forest (Original Soundtrack)",
     composer: "Gareth Coker",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/gcxKvYdDH4A/mqdefault.jpg",
+    urlId: "power-of-neo-ikarus-remix",
+    youtubeId: "gcxKvYdDH4A",
     title: 'Power of "NEO" (IKARUS Remix)',
     source: "Fanmade UNDERTALE AU",
     composer: "IKarus",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/1PiX8y04ibo/mqdefault.jpg",
+    urlId: "battle-against-a-true-hero",
+    youtubeId: "1PiX8y04ibo",
     title: "Battle Against a True Hero",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/T5pbrjMSxjs/mqdefault.jpg",
+    urlId: "are-you-happy-piano",
+    youtubeId: "T5pbrjMSxjs",
     title: "Are You Happy? [Piano]",
     source: "Make Happy",
     composer: "Bo Burnham",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/MY9Y7GUZS4o/mqdefault.jpg",
+    urlId: "straight-white-male-piano",
+    youtubeId: "MY9Y7GUZS4o",
     title: "Straight White Male [Piano]",
     source: "Make Happy",
     composer: "Bo Burnham",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/sQEihEB-Tfo/mqdefault.jpg",
+    urlId: "kill-yourself-piano",
+    youtubeId: "sQEihEB-Tfo",
     title: "Kill Yourself [Piano]",
     source: "Make Happy",
     composer: "Bo Burnham",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/otmmT7A3zGw/mqdefault.jpg",
+    urlId: "sad-piano",
+    youtubeId: "otmmT7A3zGw",
     title: "Sad [Piano]",
     source: "what.",
     composer: "Bo Burnham",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/OOpgiEP8xfc/mqdefault.jpg",
+    urlId: "drop-pop-candy",
+    youtubeId: "OOpgiEP8xfc",
     title: "Drop Pop Candy",
     source: "No Title+",
     composer: "Giga-P",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/oKhE908PdXY/mqdefault.jpg",
+    urlId: "lower-your-expectations-piano-and-voice",
+    youtubeId: "oKhE908PdXY",
     title: "Lower Your Expectations [Piano and Voice]",
     source: "Make Happy",
     composer: "Bo Burnham",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/GQk9uK1DDnM/mqdefault.jpg",
+    urlId: "battle-theme",
+    youtubeId: "GQk9uK1DDnM",
     title: "Battle Theme",
     source: "Final Fantasy X",
     composer: "Nobuo Uematsu",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/QERryArA4qo/mqdefault.jpg",
+    urlId: "technolight",
+    youtubeId: "QERryArA4qo",
     title: "Technolight",
     source: "LyricWulf Original Composition",
     composer: "LyricWulf",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/tnFtK9lcJTs/mqdefault.jpg",
+    urlId: "kill-yourself-piano-and-voice",
+    youtubeId: "tnFtK9lcJTs",
     title: "Kill Yourself [Piano and Voice]",
     source: "Make Happy",
     composer: "Bo Burnham",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/27OZgSe7WJM/mqdefault.jpg",
+    urlId: "disbelief",
+    youtubeId: "27OZgSe7WJM",
     title: "Disbelief",
     source: "Fanmade UNDERTALE AU",
     composer: "ROCK CANDY (DBOYD x KOMMISAR)",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/rKPuSjB1VZI/mqdefault.jpg",
+    urlId: "are-you-happy-piano-and-voice",
+    youtubeId: "rKPuSjB1VZI",
     title: "Are You Happy? [Piano and Voice]",
     source: "Make Happy",
     composer: "Bo Burnham",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/9br9mVz9KaY/mqdefault.jpg",
+    urlId: "with-your-drilla",
+    youtubeId: "9br9mVz9KaY",
     title: "With Your Drillâ€¦",
     source: "Tengen Toppa Gurren Lagann OST 1",
     composer: "Taku Iwasaki",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/VV1PCUJm8lU/mqdefault.jpg",
+    urlId: "quiet-water",
+    youtubeId: "VV1PCUJm8lU",
     title: "Quiet Water",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/94seJuUBe-E/mqdefault.jpg",
+    urlId: "bird-that-carries-you-over-a-disproportionately-small-gap",
+    youtubeId: "94seJuUBe-E",
     title: "Bird That Carries You Over a Disproportionately Small Gap",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/c7FVeokCIW4/mqdefault.jpg",
+    urlId: "stronger-than-you",
+    youtubeId: "c7FVeokCIW4",
     title: "Stronger Than You",
     source: "FUSION MIXTAPE",
     composer: "Rebecca Sugar",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/Uu777jQw8vU/mqdefault.jpg",
+    urlId: "straight-white-male-piano-and-voice",
+    youtubeId: "Uu777jQw8vU",
     title: "Straight White Male [Piano and Voice]",
     source: "Make Happy",
     composer: "Bo Burnham",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/G3tWQxI-dPo/mqdefault.jpg",
+    urlId: "metal-crusher",
+    youtubeId: "G3tWQxI-dPo",
     title: "Metal Crusher",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/CFGDAnelVDE/mqdefault.jpg",
+    urlId: "sad-piano-and-voice",
+    youtubeId: "CFGDAnelVDE",
     title: "Sad [Piano and Voice]",
     source: "what.",
     composer: "Bo Burnham",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/ZzlSOBzOTOI/mqdefault.jpg",
+    urlId: "believe-me",
+    youtubeId: "ZzlSOBzOTOI",
     title: "Believe Me",
     source: "Steins;Gate",
     composer: "Takeshi Abo",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/Vr0JrIQ8yvY/mqdefault.jpg",
+    urlId: "why-am-i-so-happy",
+    youtubeId: "Vr0JrIQ8yvY",
     title: "Why Am I So Happy?",
     source: "Why Am I So Happy?",
     composer: "Spose",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/q8kvvAVUivU/mqdefault.jpg",
+    urlId: "prove-it-all",
+    youtubeId: "q8kvvAVUivU",
     title: "Prove It All",
     source: "LyricWulf Original Composition",
     composer: "LyricWulf",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/ageNKR7g55g/mqdefault.jpg",
+    urlId: "once-upon-a-time",
+    youtubeId: "ageNKR7g55g",
     title: "Once Upon a Time",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/-7M0CQ0fuV4/mqdefault.jpg",
+    urlId: "alphys-takes-action",
+    youtubeId: "-7M0CQ0fuV4",
     title: "Alphys Takes Action",
     source: "Fanmade UNDERTALE AU",
     composer: "coffE K",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/y3iiJldFZ-Y/mqdefault.jpg",
+    urlId: "alphys",
+    youtubeId: "y3iiJldFZ-Y",
     title: "Alphys",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/KlqxVi4UPb4/mqdefault.jpg",
+    urlId: "amalgam",
+    youtubeId: "KlqxVi4UPb4",
     title: "Amalgam",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/A47tIVw-ts0/mqdefault.jpg",
+    urlId: "fighting",
+    youtubeId: "A47tIVw-ts0",
     title: "Fighting",
     source: "Final Fantasy VII",
     composer: "Nobuo Uematsu",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/3jNvph5ovtM/mqdefault.jpg",
+    urlId: "rocket-jump-waltz",
+    youtubeId: "3jNvph5ovtM",
     title: "Rocket Jump Waltz",
     source: "Team Fortress 2 Official Soundtrack",
     composer: "Mike Morasky",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/-7kwk7RxAYY/mqdefault.jpg",
+    urlId: "sans",
+    youtubeId: "-7kwk7RxAYY",
     title: "sans.",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/-1jOzmNOlpA/mqdefault.jpg",
+    urlId: "dark-darker-yet-darker",
+    youtubeId: "-1jOzmNOlpA",
     title: "Dark, Darker, Yet Darker",
     source: "Fanmade UNDERTALE AU",
     composer: "The Great Anansi",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/FlC51eUBIRM/mqdefault.jpg",
+    urlId: "respite",
+    youtubeId: "FlC51eUBIRM",
     title: "Respite",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/4YklRbdcdT0/mqdefault.jpg",
+    urlId: "spider-dance",
+    youtubeId: "4YklRbdcdT0",
     title: "Spider Dance",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/Eo4vEkao_88/mqdefault.jpg",
+    urlId: "sweet-sugar-love",
+    youtubeId: "Eo4vEkao_88",
     title: "Sweet Sugar Love",
     source: "Phyrnna",
     composer: "Phyrnna",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/vtJiP3aI6IQ/mqdefault.jpg",
+    urlId: "megalo-strike-back",
+    youtubeId: "vtJiP3aI6IQ",
     title: "Megalo Strike Back",
     source: "I Miss You - EarthBound 2012",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/yZprr3ImCiY/mqdefault.jpg",
+    urlId: "song-that-might-play-when-you-fight-sans",
+    youtubeId: "yZprr3ImCiY",
     title: "Song That Might Play When You Fight Sans",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/96KzZ_O_nr8/mqdefault.jpg",
+    urlId: "cold-short-version",
+    youtubeId: "96KzZ_O_nr8",
     title: "Cold (Short Version)",
     source: "RWBY",
     composer: "Jeff Williams",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/wCsCLdepGyQ/mqdefault.jpg",
+    urlId: "ooo",
+    youtubeId: "wCsCLdepGyQ",
     title: "Ooo",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/Q2ED9U5eudI/mqdefault.jpg",
+    urlId: "spooky-scary-skeletons",
+    youtubeId: "Q2ED9U5eudI",
     title: "Spooky Scary Skeletons",
     source: "Halloween Howls",
     composer: "Andrew Gold",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/Zb1K1FZ68zo/mqdefault.jpg",
+    urlId: "memory",
+    youtubeId: "Zb1K1FZ68zo",
     title: "Memory",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/P6lBwJbEWGc/mqdefault.jpg",
+    urlId: "here-we-are",
+    youtubeId: "P6lBwJbEWGc",
     title: "Here We Are",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/V_pKFcImjbg/mqdefault.jpg",
+    urlId: "friendship",
+    youtubeId: "V_pKFcImjbg",
     title: "Friendship",
     source: "toby fox",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/eCX3OkOzR0M/mqdefault.jpg",
+    urlId: "walking-by-the-sea",
+    youtubeId: "eCX3OkOzR0M",
     title: "Walking by the sea",
     source: "Deemo, Vol.2",
     composer: "Edmud Fu",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/mMJN4pcmTcg/mqdefault.jpg",
+    urlId: "stronger-monsters",
+    youtubeId: "mMJN4pcmTcg",
     title: "Stronger Monsters",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/uNIEWzo7Wj4/mqdefault.jpg",
+    urlId: "finale",
+    youtubeId: "uNIEWzo7Wj4",
     title: "Finale",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/PZvk-hz7Ik8/mqdefault.jpg",
+    urlId: "dancing-mad-5th-movement",
+    youtubeId: "PZvk-hz7Ik8",
     title: "Dancing Mad 5th Movement",
     source: "Final Fantasy VI",
     composer: "Nobuo Uematsu",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/dKkRaBwsyBQ/mqdefault.jpg",
+    urlId: "megalovania",
+    youtubeId: "dKkRaBwsyBQ",
     title: "MEGALOVANIA",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/vuAVdxWMPPE/mqdefault.jpg",
+    urlId: "try-everything",
+    youtubeId: "vuAVdxWMPPE",
     title: "Try Everything",
     source: "Zootopia",
     composer: "Shakira",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/X1xltv1OIwM/mqdefault.jpg",
+    urlId: "his-theme",
+    youtubeId: "X1xltv1OIwM",
     title: "His Theme",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/OugKuIXt9ig/mqdefault.jpg",
+    urlId: "its-raining-somewhere-else",
+    youtubeId: "OugKuIXt9ig",
     title: "It's Raining Somewhere Else",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/HtCjh8iZpJI/mqdefault.jpg",
+    urlId: "fallen-down-reprise",
+    youtubeId: "HtCjh8iZpJI",
     title: "Fallen Down (Reprise)",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/kflpz9uU99Q/mqdefault.jpg",
+    urlId: "bergentruckung-asgore",
+    youtubeId: "kflpz9uU99Q",
     title: "Bergentrückung & ASGORE",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/pL-8ChSS4v4/mqdefault.jpg",
+    urlId: "final-power",
+    youtubeId: "pL-8ChSS4v4",
     title: "Final Power",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/yix8tQ13Ohs/mqdefault.jpg",
+    urlId: "run",
+    youtubeId: "yix8tQ13Ohs",
     title: "Run!",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/nMVE_YGD4wg/mqdefault.jpg",
+    urlId: "snowy",
+    youtubeId: "nMVE_YGD4wg",
     title: "Snowy",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/kP2Yt1j5O34/mqdefault.jpg",
+    urlId: "an-ending",
+    youtubeId: "kP2Yt1j5O34",
     title: "An Ending",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/J9-yo3j6erk/mqdefault.jpg",
+    urlId: "sigh-of-dog",
+    youtubeId: "J9-yo3j6erk",
     title: "Sigh of Dog",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/5gMBfKNGXww/mqdefault.jpg",
+    urlId: "snowdin-town",
+    youtubeId: "5gMBfKNGXww",
     title: "Snowdin Town",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/R97Eo63W0l8/mqdefault.jpg",
+    urlId: "anticipation-enemy-approaching",
+    youtubeId: "R97Eo63W0l8",
     title: "Anticipation & Enemy Approaching",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/Yuxees4a4DE/mqdefault.jpg",
+    urlId: "hopes-and-dreams-last-goodbye",
+    youtubeId: "Yuxees4a4DE",
     title: "Hopes and Dreams & Last Goodbye",
     source: "UNDERTALE Soundtrack",
     composer: "toby fox",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/EEl6Cql0LWk/mqdefault.jpg",
+    urlId: "where",
+    youtubeId: "EEl6Cql0LWk",
     title: "Where",
     source: "LyricWulf Original Composition",
     composer: "LyricWulf",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/1NqEVEAgigA/mqdefault.jpg",
+    urlId: "we-are-the-crystal-gems",
+    youtubeId: "1NqEVEAgigA",
     title: "We Are the Crystal Gems",
     source: "Steven Universe",
     composer: "Rebecca Sugar, Aivi & Surasshu",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/vyAY78lb9bU/mqdefault.jpg",
+    urlId: "randall-piano",
+    youtubeId: "vyAY78lb9bU",
     title: "Randall [Piano]",
     source: "Brave Frontier",
     composer: "Hikoshi Hashimoto",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/FcNIleFnRK4/mqdefault.jpg",
+    urlId: "randall-full-score",
+    youtubeId: "FcNIleFnRK4",
     title: "Randall [Full Score]",
     source: "Brave Frontier",
     composer: "Hikoshi Hashimoto",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/-zMlycr-LJo/mqdefault.jpg",
+    urlId: "chasing-cars",
+    youtubeId: "-zMlycr-LJo",
     title: "Chasing Cars",
     source: "Eyes Open",
     composer: "Snow Patrol",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/HOT7YZpl8xM/mqdefault.jpg",
+    urlId: "kimi-wa-wasurerareru-no",
+    youtubeId: "HOT7YZpl8xM",
     title: "Kimi wa Wasurerareru no",
     source: "Shigatsu wa Kimi no Uso (Your Lie in April)",
     composer: "Masaru Yokoyama",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/TrpCK0Q6wAY/mqdefault.jpg",
+    urlId: "sister-rust",
+    youtubeId: "TrpCK0Q6wAY",
     title: "Sister Rust",
     source: "Lucy",
     composer: "Damon Albarn",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/CXqJhS0vmxA/mqdefault.jpg",
+    urlId: "last-battle",
+    youtubeId: "CXqJhS0vmxA",
     title: "Last Battle ",
     source: "Cave Story",
     composer: "Daisuke Amaya",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/f2qlB-kRj5c/mqdefault.jpg",
+    urlId: "blackout",
+    youtubeId: "f2qlB-kRj5c",
     title: "Blackout",
     source: "Hell Is What You Make It",
     composer: "Breathe Carolina",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/Kei-nTdHuaA/mqdefault.jpg",
+    urlId: "home-of-the-blues",
+    youtubeId: "Kei-nTdHuaA",
     title: "Home of the Blues",
     source: "Owl City Cover",
     composer: "Owl City",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/p3-MYUxTsic/mqdefault.jpg",
+    urlId: "rewel",
+    youtubeId: "p3-MYUxTsic",
     title: "ReWel",
     source: "Catalyst",
     composer: "Tristam & Rogue",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/KjdbqrUI-KE/mqdefault.jpg",
+    urlId: "ingame-theme",
+    youtubeId: "KjdbqrUI-KE",
     title: "InGame Theme",
     source: "Castles II: Siege and Conquest",
     composer: "Charles Deenen",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/2SJOboPkRgY/mqdefault.jpg",
+    urlId: "heros-end",
+    youtubeId: "2SJOboPkRgY",
     title: "Hero's End",
     source: "Cave Story",
     composer: "Daisuke Amaya",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/iXndMLBSNGQ/mqdefault.jpg",
+    urlId: "quantus",
+    youtubeId: "iXndMLBSNGQ",
     title: "Quantus",
     source: "LyricWulf Original Composition",
     composer: "LyricWulf",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/z5j_rI3JeSQ/mqdefault.jpg",
+    urlId: "unused-track-1",
+    youtubeId: "z5j_rI3JeSQ",
     title: "Unused Track 1",
     source: "Clannad",
     composer: "Shinji Orito",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/594VKbWySFU/mqdefault.jpg",
+    urlId: "gypsy-dance",
+    youtubeId: "594VKbWySFU",
     title: "Gypsy Dance",
     source: "Joseph Compello",
     composer: "Joseph Compello",
     transcriber: "LyricWulf"
   },
   {
-    img: "https://img.youtube.com/vi/ysWv8SJ0bDk/mqdefault.jpg",
+    urlId: "shy-violet",
+    youtubeId: "ysWv8SJ0bDk",
     title: "Shy Violet",
     source: "All Things Bright and Beautiful",
     composer: "Owl City",
