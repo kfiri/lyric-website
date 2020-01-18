@@ -32,12 +32,16 @@
           <!-- TODO: add id to the link -->
           <a nz-col nzSpan="12">
             <i nz-icon nzType="play-circle" nzTheme="outline"></i>
-            <span>open MP3 in browser</span>
+            <span>Play MP3</span>
           </a>
           <!-- TODO: add id to the link -->
-          <a nz-col nzSpan="12">
+          <a
+            nz-col
+            nzSpan="12"
+            [href]="'https://www.youtube.com/watch?v=' + song.youtubeId"
+          >
             <i nz-icon nzType="youtube" nzTheme="outline"></i>
-            <span>Play On YouTube</span>
+            <span>YouTube</span>
           </a>
         </div>
       </div>
@@ -55,7 +59,9 @@
   </a>
   <div
     class="card-cover-image"
-    [style.background-image]="'url(' + song.img + ')'"
+    [style.background-image]="
+      'url(https://img.youtube.com/vi/' + song.youtubeId + '/mqdefault.jpg)'
+    "
   ></div>
 </ng-template>
 <ng-template #actionDownload>
