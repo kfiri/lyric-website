@@ -18,12 +18,12 @@
       >
         <div nz-rownzType="flex">
           <!-- TODO: add id to the link -->
-          <a nz-col nzSpan="12">
+          <a nz-col nzSpan="12" [href]="'https://lyricwulf.com/songs/' + song.urlId + '/download/pdf'">
             <i nz-icon nzType="file-pdf" nzTheme="outline"></i>
             <span>Sheets (PDF)</span>
           </a>
           <!-- TODO: add id to the link -->
-          <a nz-col nzSpan="12">
+          <a nz-col nzSpan="12" [href]="'https://lyricwulf.com/songs/' + song.urlId + '/download/mid'">
             <i nz-icon nzType="file-markdown" nzTheme="outline"></i>
             <span>MIDI</span>
           </a>
@@ -32,7 +32,7 @@
           <!-- TODO: add id to the link -->
           <a nz-col nzSpan="12">
             <i nz-icon nzType="play-circle" nzTheme="outline"></i>
-            <span>Play MP3</span>
+            <span>Play MP3 (not done)</span>
           </a>
           <!-- TODO: add id to the link -->
           <a
@@ -143,7 +143,7 @@
 </nz-card>
 <ng-template #coverTemplate>
   <!-- TODO: add id to the link -->
-  <a class="card-cover-image-overlay">
+  <a class="card-cover-image-overlay" [href]="'https://lyricwulf.com/songs/' + song.urlId">
     <div>
       <div>
         Open Song Page
