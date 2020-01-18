@@ -118,15 +118,24 @@ nz-card > ::ng-deep.ant-card-body {
   left: 0;
 }
 
-.download-drawer > div {
+.download-drawer > div,
+.share-drawer > div {
   height: 50%;
 }
-.download-drawer > div > a {
+.download-drawer > div > a,
+.share-drawer > div > a {
   height: 100%;
   transition: box-shadow 0.1s ease-in-out;
 }
-.download-drawer > div > a:hover {
+.download-drawer > div > a:hover,
+.share-drawer > div > a:hover {
+  z-index: 1; /* z-index for apearing in front of sibling elements. */
   box-shadow: 0px 0px 4px 3px #0000004d;
+}
+.share-drawer > div > a > img {
+  height: 100%;
+  /* margin: auto; */
+  width: 100%;
 }
 
 i[nz-icon] {

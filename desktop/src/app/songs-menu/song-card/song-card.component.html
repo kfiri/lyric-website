@@ -45,6 +45,99 @@
           </a>
         </div>
       </div>
+      <div
+        class="drawer top share-drawer"
+        [class.drawn]="openedDrawer === DRAWERS.SHARE"
+      >
+        <div nz-rownzType="flex">
+          <!-- TODO: add id to the link -->
+          <a
+            nz-col
+            nzSpan="8"
+            [href]="'https://pinterest.com/pin/create/bookmarklet/?media=LyricWulf&amp;url=https://lyricwulf.com/songs/' + song.urlId + '&amp;is_video=false&amp;description=Lyricwulf%27s arrangement of ' + song.title"
+            class="waves-effect waves-light"
+          >
+            <img
+              src="assets/img/icons/Pinterest.svg"
+              alt="Pinterest"
+              class="responsive-img"
+              style="background-color: #bd081c;"
+            />
+          </a>
+          <!-- TODO: add id to the link -->
+          <a
+            nz-col
+            nzSpan="8"
+            [href]="'https://www.reddit.com/submit?url=https://lyricwulf.com/songs/' + song.urlId + '&amp;title=Lyricwulf%27s arrangement of ' + song.title"
+            class="waves-effect waves-light"
+          >
+            <img
+              src="assets/img/icons/Reddit.svg"
+              alt="Reddit"
+              class="responsive-img"
+              style="background-color: orangered;"
+            />
+          </a>
+          <!-- TODO: add id to the link -->
+          <a
+            nz-col
+            nzSpan="8"
+            [href]="'https://twitter.com/intent/tweet?status=Lyricwulf%27s arrangement of ' + song.title + '+https://lyricwulf.com/songs/' + song.urlId"
+            class="waves-effect waves-light"
+          >
+            <img
+              src="assets/img/icons/Twitter.svg"
+              alt="Twitter"
+              class="responsive-img"
+              style="background-color: #55acee;"
+            />
+          </a>
+        </div>
+        <div nz-rownzType="flex">
+          <!-- TODO: add id to the link -->
+          <a
+            nz-col
+            nzSpan="8"
+            [href]="'https://www.facebook.com/sharer/sharer.php?u=https://lyricwulf.com/songs/' + song.urlId + '&amp;title=Lyricwulf%27s arrangement of ' + song.title"
+            class="waves-effect waves-light"
+          >
+            <img
+              src="assets/img/icons/Facebook.svg"
+              alt="Facebook"
+              class="responsive-img"
+              style="background-color: #3a5a99;"
+            />
+          </a>
+          <!-- TODO: add id to the link -->
+          <a
+            nz-col
+            nzSpan="8"
+            [href]="'https://www.tumblr.com/share?v=3&amp;u=https://lyricwulf.com/songs/' + song.urlId + '&amp;t=LyricWulf%27s arrangement of ' + song.title"
+            class="waves-effect waves-light"
+          >
+            <img
+              src="assets/img/icons/Tumblr.svg"
+              alt="Tumblr"
+              class="responsive-img"
+              style="background-color: #3b445c;"
+            />
+          </a>
+          <!-- TODO: add id to the link -->
+          <a
+            nz-col
+            nzSpan="8"
+            [href]="'https://wa.me/?text=Lyricwulf%27s arrangement of ' + song.title + ':%0Ahttps://lyricwulf.com/songs/' + song.urlId"
+            class="waves-effect waves-light"
+          >
+            <img
+              src="assets/img/icons/WhatsApp.svg"
+              alt="WhatsApp"
+              class="responsive-img"
+              style="background-color: #45d354;"
+            />
+          </a>
+        </div>
+      </div>
     </ng-template>
   </nz-card-meta>
 </nz-card>

@@ -18,13 +18,22 @@ const songs = []
 for (let card of cards.children) {
   const [imageDiv, contentDiv, revealDiv] = card.children;
   const img = imageDiv.children[0].src;
+  const youtubeId = /https\:\/\/img\.youtube\.com\/vi\/([^/]+)\/mqdefault\.jpg/.exec(img)[1];
   let [{textContent: title}, {textContent: source}] = contentDiv.children;
-  title = title.trim();
+  title = title.trim().replace(/more_vert$/, '');
   source = source.trim();
   let [,{children: [{textContent: composer}, {textContent: transcriber}]}] = revealDiv.children;
   composer = composer.trim();
   transcriber = transcriber.trim();
-  songs.push({img, title, source, composer, transcriber})
+  urlId = /\/songs\/([^/]+)/.exec(card.getElementsByClassName('md-raised md-primary md-button md-ink-ripple')[0].href)[1]
+  songs.push({urlId, youtubeId, title, source, composer, transcriber})
 }
-console.log(JSON.stringify(songs, null, 2));
+let copy_text = JSON.stringify(songs, null, 2)
+copy_text = copy_text.substring(1, copy_text.length - 2) + ','
+console.log(copy_text);
+setTimeout(() => {
+  navigator.clipboard.writeText(copy_text).then(() => {
+    document.getElementById('chevron-right').children[0].click();
+  });
+}, 1000);
 -->

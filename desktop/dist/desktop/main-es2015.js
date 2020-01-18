@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div id=\"header-content\" nz-row>\n  <div nz-col nzSpan=\"8\">\n    {{ isFloating ? \"floating\" : \"fixed\" }} Header WOOHOO!!!!!!!!!!!\n  </div>\n  <div nz-col nzSpan=\"8\">\n    <nz-input-group [nzPrefix]=\"suffixIconSearch\">\n      <input type=\"text\" nz-input placeholder=\"Search... (does not work yet)\" />\n    </nz-input-group>\n    <ng-template #suffixIconSearch>\n      <i id=\"suffix-icon-search\" nz-icon nzType=\"search\" (click)=\"log()\"></i>\n    </ng-template>\n  </div>\n  <div nz-col nzSpan=\"8\">Get In Touch!</div>\n</div>\n<!--\nconst cards = document.getElementById('cards');\nconst songs = []\nfor (let card of cards.children) {\n  const [imageDiv, contentDiv, revealDiv] = card.children;\n  const img = imageDiv.children[0].src;\n  let [{textContent: title}, {textContent: source}] = contentDiv.children;\n  title = title.trim();\n  source = source.trim();\n  let [,{children: [{textContent: composer}, {textContent: transcriber}]}] = revealDiv.children;\n  composer = composer.trim();\n  transcriber = transcriber.trim();\n  songs.push({img, title, source, composer, transcriber})\n}\nconsole.log(JSON.stringify(songs, null, 2));\n-->\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div id=\"header-content\" nz-row>\n  <div nz-col nzSpan=\"8\">\n    {{ isFloating ? \"floating\" : \"fixed\" }} Header WOOHOO!!!!!!!!!!!\n  </div>\n  <div nz-col nzSpan=\"8\">\n    <nz-input-group [nzPrefix]=\"suffixIconSearch\">\n      <input type=\"text\" nz-input placeholder=\"Search... (does not work yet)\" />\n    </nz-input-group>\n    <ng-template #suffixIconSearch>\n      <i id=\"suffix-icon-search\" nz-icon nzType=\"search\" (click)=\"log()\"></i>\n    </ng-template>\n  </div>\n  <div nz-col nzSpan=\"8\">Get In Touch!</div>\n</div>\n<!--\nconst cards = document.getElementById('cards');\nconst songs = []\nfor (let card of cards.children) {\n  const [imageDiv, contentDiv, revealDiv] = card.children;\n  const img = imageDiv.children[0].src;\n  const youtubeId = /https\\:\\/\\/img\\.youtube\\.com\\/vi\\/([^/]+)\\/mqdefault\\.jpg/.exec(img)[1];\n  let [{textContent: title}, {textContent: source}] = contentDiv.children;\n  title = title.trim().replace(/more_vert$/, '');\n  source = source.trim();\n  let [,{children: [{textContent: composer}, {textContent: transcriber}]}] = revealDiv.children;\n  composer = composer.trim();\n  transcriber = transcriber.trim();\n  urlId = /\\/songs\\/([^/]+)/.exec(card.getElementsByClassName('md-raised md-primary md-button md-ink-ripple')[0].href)[1]\n  songs.push({urlId, youtubeId, title, source, composer, transcriber})\n}\nlet copy_text = JSON.stringify(songs, null, 2)\ncopy_text = copy_text.substring(1, copy_text.length - 2) + ','\nconsole.log(copy_text);\nsetTimeout(() => {\n  navigator.clipboard.writeText(copy_text).then(() => {\n    document.getElementById('chevron-right').children[0].click();\n  });\n}, 1000);\n-->\n");
 
 /***/ }),
 
@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nz-card [nzCover]=\"coverTemplate\" [nzActions]=\"[actionDownload, actionShare]\">\n  <nz-card-meta\n    [nzTitle]=\"song.title\"\n    [nzDescription]=\"true ? cardDescription : false\"\n  >\n    <ng-template #cardDescription>\n      <div\n        class=\"card-description\"\n        nz-tooltip\n        nzTooltipTitle=\"prompt text\"\n        [title]=\"song.source\"\n      >\n        {{ song.source }}\n      </div>\n      <div\n        class=\"drawer bottom download-drawer\"\n        [class.drawn]=\"openedDrawer === DRAWERS.DOWNLOAD\"\n      >\n        <div nz-rownzType=\"flex\">\n          <!-- TODO: add id to the link -->\n          <a nz-col nzSpan=\"12\">\n            <i nz-icon nzType=\"file-pdf\" nzTheme=\"outline\"></i>\n            <span>Sheets (PDF)</span>\n          </a>\n          <!-- TODO: add id to the link -->\n          <a nz-col nzSpan=\"12\">\n            <i nz-icon nzType=\"file-markdown\" nzTheme=\"outline\"></i>\n            <span>MIDI</span>\n          </a>\n        </div>\n        <div nz-row nzType=\"flex\">\n          <!-- TODO: add id to the link -->\n          <a nz-col nzSpan=\"12\">\n            <i nz-icon nzType=\"play-circle\" nzTheme=\"outline\"></i>\n            <span>open MP3 in browser</span>\n          </a>\n          <!-- TODO: add id to the link -->\n          <a nz-col nzSpan=\"12\">\n            <i nz-icon nzType=\"youtube\" nzTheme=\"outline\"></i>\n            <span>Play On YouTube</span>\n          </a>\n        </div>\n      </div>\n    </ng-template>\n  </nz-card-meta>\n</nz-card>\n<ng-template #coverTemplate>\n  <!-- TODO: add id to the link -->\n  <a class=\"card-cover-image-overlay\">\n    <div>\n      <div>\n        Open Song Page\n      </div>\n    </div>\n  </a>\n  <div\n    class=\"card-cover-image\"\n    [style.background-image]=\"'url(' + song.img + ')'\"\n  ></div>\n</ng-template>\n<ng-template #actionDownload>\n  <i nz-icon nzType=\"download\" (click)=\"toggleDrawer(DRAWERS.DOWNLOAD)\"></i>\n</ng-template>\n<ng-template #actionShare>\n  <i nz-icon nzType=\"share-alt\" (click)=\"toggleDrawer(DRAWERS.SHARE)\"></i>\n</ng-template>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nz-card [nzCover]=\"coverTemplate\" [nzActions]=\"[actionDownload, actionShare]\">\n  <nz-card-meta\n    [nzTitle]=\"song.title\"\n    [nzDescription]=\"true ? cardDescription : false\"\n  >\n    <ng-template #cardDescription>\n      <div\n        class=\"card-description\"\n        nz-tooltip\n        nzTooltipTitle=\"prompt text\"\n        [title]=\"song.source\"\n      >\n        {{ song.source }}\n      </div>\n      <div\n        class=\"drawer bottom download-drawer\"\n        [class.drawn]=\"openedDrawer === DRAWERS.DOWNLOAD\"\n      >\n        <div nz-rownzType=\"flex\">\n          <!-- TODO: add id to the link -->\n          <a nz-col nzSpan=\"12\">\n            <i nz-icon nzType=\"file-pdf\" nzTheme=\"outline\"></i>\n            <span>Sheets (PDF)</span>\n          </a>\n          <!-- TODO: add id to the link -->\n          <a nz-col nzSpan=\"12\">\n            <i nz-icon nzType=\"file-markdown\" nzTheme=\"outline\"></i>\n            <span>MIDI</span>\n          </a>\n        </div>\n        <div nz-row nzType=\"flex\">\n          <!-- TODO: add id to the link -->\n          <a nz-col nzSpan=\"12\">\n            <i nz-icon nzType=\"play-circle\" nzTheme=\"outline\"></i>\n            <span>Play MP3</span>\n          </a>\n          <!-- TODO: add id to the link -->\n          <a\n            nz-col\n            nzSpan=\"12\"\n            [href]=\"'https://www.youtube.com/watch?v=' + song.youtubeId\"\n          >\n            <i nz-icon nzType=\"youtube\" nzTheme=\"outline\"></i>\n            <span>YouTube</span>\n          </a>\n        </div>\n      </div>\n      <div\n        class=\"drawer top share-drawer\"\n        [class.drawn]=\"openedDrawer === DRAWERS.SHARE\"\n      >\n        <div nz-rownzType=\"flex\">\n          <!-- TODO: add id to the link -->\n          <a\n            nz-col\n            nzSpan=\"8\"\n            [href]=\"'https://pinterest.com/pin/create/bookmarklet/?media=LyricWulf&amp;url=https://lyricwulf.com/songs/' + song.urlId + '&amp;is_video=false&amp;description=Lyricwulf%27s arrangement of ' + song.title\"\n            class=\"waves-effect waves-light\"\n          >\n            <img\n              src=\"assets/img/icons/Pinterest.svg\"\n              alt=\"Pinterest\"\n              class=\"responsive-img\"\n              style=\"background-color: #bd081c;\"\n            />\n          </a>\n          <!-- TODO: add id to the link -->\n          <a\n            nz-col\n            nzSpan=\"8\"\n            [href]=\"'https://www.reddit.com/submit?url=https://lyricwulf.com/songs/' + song.urlId + '&amp;title=Lyricwulf%27s arrangement of ' + song.title\"\n            class=\"waves-effect waves-light\"\n          >\n            <img\n              src=\"assets/img/icons/Reddit.svg\"\n              alt=\"Reddit\"\n              class=\"responsive-img\"\n              style=\"background-color: orangered;\"\n            />\n          </a>\n          <!-- TODO: add id to the link -->\n          <a\n            nz-col\n            nzSpan=\"8\"\n            [href]=\"'https://twitter.com/intent/tweet?status=Lyricwulf%27s arrangement of ' + song.title + '+https://lyricwulf.com/songs/' + song.urlId\"\n            class=\"waves-effect waves-light\"\n          >\n            <img\n              src=\"assets/img/icons/Twitter.svg\"\n              alt=\"Twitter\"\n              class=\"responsive-img\"\n              style=\"background-color: #55acee;\"\n            />\n          </a>\n        </div>\n        <div nz-rownzType=\"flex\">\n          <!-- TODO: add id to the link -->\n          <a\n            nz-col\n            nzSpan=\"8\"\n            [href]=\"'https://www.facebook.com/sharer/sharer.php?u=https://lyricwulf.com/songs/' + song.urlId + '&amp;title=Lyricwulf%27s arrangement of ' + song.title\"\n            class=\"waves-effect waves-light\"\n          >\n            <img\n              src=\"assets/img/icons/Facebook.svg\"\n              alt=\"Facebook\"\n              class=\"responsive-img\"\n              style=\"background-color: #3a5a99;\"\n            />\n          </a>\n          <!-- TODO: add id to the link -->\n          <a\n            nz-col\n            nzSpan=\"8\"\n            [href]=\"'https://www.tumblr.com/share?v=3&amp;u=https://lyricwulf.com/songs/' + song.urlId + '&amp;t=LyricWulf%27s arrangement of ' + song.title\"\n            class=\"waves-effect waves-light\"\n          >\n            <img\n              src=\"assets/img/icons/Tumblr.svg\"\n              alt=\"Tumblr\"\n              class=\"responsive-img\"\n              style=\"background-color: #3b445c;\"\n            />\n          </a>\n          <!-- TODO: add id to the link -->\n          <a\n            nz-col\n            nzSpan=\"8\"\n            [href]=\"'https://wa.me/?text=Lyricwulf%27s arrangement of ' + song.title + ':%0Ahttps://lyricwulf.com/songs/' + song.urlId\"\n            class=\"waves-effect waves-light\"\n          >\n            <img\n              src=\"assets/img/icons/WhatsApp.svg\"\n              alt=\"WhatsApp\"\n              class=\"responsive-img\"\n              style=\"background-color: #45d354;\"\n            />\n          </a>\n        </div>\n      </div>\n    </ng-template>\n  </nz-card-meta>\n</nz-card>\n<ng-template #coverTemplate>\n  <!-- TODO: add id to the link -->\n  <a class=\"card-cover-image-overlay\">\n    <div>\n      <div>\n        Open Song Page\n      </div>\n    </div>\n  </a>\n  <div\n    class=\"card-cover-image\"\n    [style.background-image]=\"\n      'url(https://img.youtube.com/vi/' + song.youtubeId + '/mqdefault.jpg)'\n    \"\n  ></div>\n</ng-template>\n<ng-template #actionDownload>\n  <i nz-icon nzType=\"download\" (click)=\"toggleDrawer(DRAWERS.DOWNLOAD)\"></i>\n</ng-template>\n<ng-template #actionShare>\n  <i nz-icon nzType=\"share-alt\" (click)=\"toggleDrawer(DRAWERS.SHARE)\"></i>\n</ng-template>\n");
 
 /***/ }),
 
@@ -829,7 +829,7 @@ CardDrawerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("nz-card {\r\n  max-width: 350px;\r\n  margin: auto;\r\n}\r\n\r\nnz-card > ::ng-deep.ant-card-cover {\r\n  position: relative;\r\n  overflow-y: hidden;\r\n}\r\n\r\n.card-cover-image-overlay {\r\n  cursor: pointer;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  position: absolute;\r\n}\r\n\r\n.card-cover-image-overlay > div {\r\n  position: relative;\r\n  height: 50%;\r\n  width: 100%;\r\n\r\n  /* Locate the ... above the overlay (=negetive the height) */\r\n  top: -50%;\r\n  /* Give the element a border radius from the bottom (50%) to the left and\r\n     right borders of the element (default value 0 - no border radius) */\r\n  border-bottom-right-radius: 50% 0;\r\n  border-bottom-left-radius: 50% 0;\r\n  /* The transition for the top and border values for when the overlay is hovered */\r\n  -webkit-transition: all 0.2s ease-in-out;\r\n  transition: all 0.2s ease-in-out;\r\n\r\n  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, white), to(hsla(0, 0%, 100%, 0.6)));\r\n\r\n  background: linear-gradient(white 50%, hsla(0, 0%, 100%, 0.6));\r\n}\r\n\r\n.card-cover-image-overlay:hover > div {\r\n  /* Locate the ... within the overlay (=negetive half of the height) */\r\n  top: -25%;\r\n  /* Round the borders all the way to the middle of the ... (50%) */\r\n  border-bottom-right-radius: 50% 50%;\r\n  border-bottom-left-radius: 50% 50%;\r\n}\r\n\r\n.card-cover-image-overlay > div > div {\r\n  /* Position the ... in lower half of the ... */\r\n  position: relative;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: -50%;\r\n  height: 50%;\r\n\r\n  display: -webkit-box;\r\n\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n          justify-content: center;\r\n  -webkit-box-orient: vertical;\r\n  -webkit-box-direction: normal;\r\n          flex-direction: column;\r\n  /* Center the content/text of the ... */\r\n  align-content: center;\r\n  text-align: center;\r\n  /* Pad the bottom of the ... by half of the font size */\r\n  padding-bottom: 0.5em;\r\n\r\n  color: hsla(0, 0%, 30%, 1);\r\n  font-weight: 700; /* bold */\r\n  /* Do not allow the user to select the text (it's annoying) */\r\n  -webkit-user-select: none;\r\n     -moz-user-select: none;\r\n      -ms-user-select: none;\r\n          user-select: none;\r\n}\r\n\r\nnz-card > ::ng-deep.ant-card-body {\r\n  position: relative;\r\n  overflow: hidden;\r\n}\r\n\r\n/* Make the icons in the card actions to take the whole space,\r\n   because only the icons can invoke a click event. */\r\n\r\n:host ::ng-deep.ant-card-actions > li {\r\n  margin: 0;\r\n}\r\n\r\n:host ::ng-deep.ant-card-actions > li > span {\r\n  width: 100%;\r\n}\r\n\r\n:host ::ng-deep.ant-card-actions > li > span > i {\r\n  width: inherit;\r\n  padding: 9px 0;\r\n}\r\n\r\n.card-description {\r\n  white-space: nowrap;\r\n  overflow: hidden;\r\n  text-overflow: ellipsis;\r\n  color: gray;\r\n}\r\n\r\n.card-cover-image {\r\n  height: 150px;\r\n  background-position: center;\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\r\n  background-color: #fff;\r\n}\r\n\r\n.drawer {\r\n  position: absolute;\r\n  height: 100%;\r\n  width: 100%;\r\n  left: 0;\r\n  top: 0;\r\n  -webkit-transition: left 0.2s ease-out, top 0.2s ease-out;\r\n  transition: left 0.2s ease-out, top 0.2s ease-out;\r\n  background-color: white;\r\n}\r\n\r\n.drawer.top {\r\n  top: -100%;\r\n}\r\n\r\n.drawer.bottom {\r\n  top: 100%;\r\n}\r\n\r\n.drawer.left {\r\n  left: -100%;\r\n}\r\n\r\n.drawer.right {\r\n  left: 100%;\r\n}\r\n\r\n.drawer.drawn {\r\n  top: 0;\r\n  left: 0;\r\n}\r\n\r\n.download-drawer > div {\r\n  height: 50%;\r\n}\r\n\r\n.download-drawer > div > a {\r\n  height: 100%;\r\n  -webkit-transition: box-shadow 0.1s ease-in-out;\r\n  transition: box-shadow 0.1s ease-in-out;\r\n}\r\n\r\n.download-drawer > div > a:hover {\r\n  box-shadow: 0px 0px 4px 3px #0000004d;\r\n}\r\n\r\ni[nz-icon] {\r\n  color: #1890ff;\r\n  -webkit-transition: -webkit-filter 0.2s ease-in-out;\r\n  transition: -webkit-filter 0.2s ease-in-out;\r\n  transition: filter 0.2s ease-in-out;\r\n  transition: filter 0.2s ease-in-out, -webkit-filter 0.2s ease-in-out;\r\n}\r\n\r\ni[nz-icon]:hover {\r\n  -webkit-filter: drop-shadow(0px 0px 1px #1890ffaa);\r\n          filter: drop-shadow(0px 0px 1px #1890ffaa);\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc29uZ3MtbWVudS9zb25nLWNhcmQvc29uZy1jYXJkLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxnQkFBZ0I7RUFDaEIsWUFBWTtBQUNkOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLGtCQUFrQjtBQUNwQjs7QUFDQTtFQUNFLGVBQWU7RUFDZixNQUFNO0VBQ04sU0FBUztFQUNULE9BQU87RUFDUCxRQUFRO0VBQ1Isa0JBQWtCO0FBQ3BCOztBQUNBO0VBQ0Usa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxXQUFXOztFQUVYLDREQUE0RDtFQUM1RCxTQUFTO0VBQ1Q7d0VBQ3NFO0VBQ3RFLGlDQUFpQztFQUNqQyxnQ0FBZ0M7RUFDaEMsaUZBQWlGO0VBQ2pGLHdDQUFnQztFQUFoQyxnQ0FBZ0M7O0VBRWhDLCtHQUE4RDs7RUFBOUQsOERBQThEO0FBQ2hFOztBQUNBO0VBQ0UscUVBQXFFO0VBQ3JFLFNBQVM7RUFDVCxpRUFBaUU7RUFDakUsbUNBQW1DO0VBQ25DLGtDQUFrQztBQUNwQzs7QUFDQTtFQUNFLDhDQUE4QztFQUM5QyxrQkFBa0I7RUFDbEIsT0FBTztFQUNQLFFBQVE7RUFDUixZQUFZO0VBQ1osV0FBVzs7RUFFWCxvQkFBYTs7RUFBYixhQUFhO0VBQ2Isd0JBQXVCO1VBQXZCLHVCQUF1QjtFQUN2Qiw0QkFBc0I7RUFBdEIsNkJBQXNCO1VBQXRCLHNCQUFzQjtFQUN0Qix1Q0FBdUM7RUFDdkMscUJBQXFCO0VBQ3JCLGtCQUFrQjtFQUNsQix1REFBdUQ7RUFDdkQscUJBQXFCOztFQUVyQiwwQkFBMEI7RUFDMUIsZ0JBQWdCLEVBQUUsU0FBUztFQUMzQiw2REFBNkQ7RUFDN0QseUJBQWlCO0tBQWpCLHNCQUFpQjtNQUFqQixxQkFBaUI7VUFBakIsaUJBQWlCO0FBQ25COztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLGdCQUFnQjtBQUNsQjs7QUFDQTtxREFDcUQ7O0FBQ3JEO0VBQ0UsU0FBUztBQUNYOztBQUNBO0VBQ0UsV0FBVztBQUNiOztBQUNBO0VBQ0UsY0FBYztFQUNkLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSxtQkFBbUI7RUFDbkIsZ0JBQWdCO0VBQ2hCLHVCQUF1QjtFQUN2QixXQUFXO0FBQ2I7O0FBQ0E7RUFDRSxhQUFhO0VBQ2IsMkJBQTJCO0VBQzNCLHNCQUFzQjtFQUN0Qiw0QkFBNEI7RUFDNUIsc0JBQXNCO0FBQ3hCOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLFlBQVk7RUFDWixXQUFXO0VBQ1gsT0FBTztFQUNQLE1BQU07RUFDTix5REFBaUQ7RUFBakQsaURBQWlEO0VBQ2pELHVCQUF1QjtBQUN6Qjs7QUFDQTtFQUNFLFVBQVU7QUFDWjs7QUFDQTtFQUNFLFNBQVM7QUFDWDs7QUFDQTtFQUNFLFdBQVc7QUFDYjs7QUFDQTtFQUNFLFVBQVU7QUFDWjs7QUFDQTtFQUNFLE1BQU07RUFDTixPQUFPO0FBQ1Q7O0FBRUE7RUFDRSxXQUFXO0FBQ2I7O0FBQ0E7RUFDRSxZQUFZO0VBQ1osK0NBQXVDO0VBQXZDLHVDQUF1QztBQUN6Qzs7QUFDQTtFQUNFLHFDQUFxQztBQUN2Qzs7QUFFQTtFQUNFLGNBQWM7RUFDZCxtREFBbUM7RUFBbkMsMkNBQW1DO0VBQW5DLG1DQUFtQztFQUFuQyxvRUFBbUM7QUFDckM7O0FBQ0E7RUFDRSxrREFBMEM7VUFBMUMsMENBQTBDO0FBQzVDIiwiZmlsZSI6InNyYy9hcHAvc29uZ3MtbWVudS9zb25nLWNhcmQvc29uZy1jYXJkLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJuei1jYXJkIHtcclxuICBtYXgtd2lkdGg6IDM1MHB4O1xyXG4gIG1hcmdpbjogYXV0bztcclxufVxyXG5cclxubnotY2FyZCA+IDo6bmctZGVlcC5hbnQtY2FyZC1jb3ZlciB7XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gIG92ZXJmbG93LXk6IGhpZGRlbjtcclxufVxyXG4uY2FyZC1jb3Zlci1pbWFnZS1vdmVybGF5IHtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgdG9wOiAwO1xyXG4gIGJvdHRvbTogMDtcclxuICBsZWZ0OiAwO1xyXG4gIHJpZ2h0OiAwO1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxufVxyXG4uY2FyZC1jb3Zlci1pbWFnZS1vdmVybGF5ID4gZGl2IHtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgaGVpZ2h0OiA1MCU7XHJcbiAgd2lkdGg6IDEwMCU7XHJcblxyXG4gIC8qIExvY2F0ZSB0aGUgLi4uIGFib3ZlIHRoZSBvdmVybGF5ICg9bmVnZXRpdmUgdGhlIGhlaWdodCkgKi9cclxuICB0b3A6IC01MCU7XHJcbiAgLyogR2l2ZSB0aGUgZWxlbWVudCBhIGJvcmRlciByYWRpdXMgZnJvbSB0aGUgYm90dG9tICg1MCUpIHRvIHRoZSBsZWZ0IGFuZFxyXG4gICAgIHJpZ2h0IGJvcmRlcnMgb2YgdGhlIGVsZW1lbnQgKGRlZmF1bHQgdmFsdWUgMCAtIG5vIGJvcmRlciByYWRpdXMpICovXHJcbiAgYm9yZGVyLWJvdHRvbS1yaWdodC1yYWRpdXM6IDUwJSAwO1xyXG4gIGJvcmRlci1ib3R0b20tbGVmdC1yYWRpdXM6IDUwJSAwO1xyXG4gIC8qIFRoZSB0cmFuc2l0aW9uIGZvciB0aGUgdG9wIGFuZCBib3JkZXIgdmFsdWVzIGZvciB3aGVuIHRoZSBvdmVybGF5IGlzIGhvdmVyZWQgKi9cclxuICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlLWluLW91dDtcclxuXHJcbiAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KHdoaXRlIDUwJSwgaHNsYSgwLCAwJSwgMTAwJSwgMC42KSk7XHJcbn1cclxuLmNhcmQtY292ZXItaW1hZ2Utb3ZlcmxheTpob3ZlciA+IGRpdiB7XHJcbiAgLyogTG9jYXRlIHRoZSAuLi4gd2l0aGluIHRoZSBvdmVybGF5ICg9bmVnZXRpdmUgaGFsZiBvZiB0aGUgaGVpZ2h0KSAqL1xyXG4gIHRvcDogLTI1JTtcclxuICAvKiBSb3VuZCB0aGUgYm9yZGVycyBhbGwgdGhlIHdheSB0byB0aGUgbWlkZGxlIG9mIHRoZSAuLi4gKDUwJSkgKi9cclxuICBib3JkZXItYm90dG9tLXJpZ2h0LXJhZGl1czogNTAlIDUwJTtcclxuICBib3JkZXItYm90dG9tLWxlZnQtcmFkaXVzOiA1MCUgNTAlO1xyXG59XHJcbi5jYXJkLWNvdmVyLWltYWdlLW92ZXJsYXkgPiBkaXYgPiBkaXYge1xyXG4gIC8qIFBvc2l0aW9uIHRoZSAuLi4gaW4gbG93ZXIgaGFsZiBvZiB0aGUgLi4uICovXHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gIGxlZnQ6IDA7XHJcbiAgcmlnaHQ6IDA7XHJcbiAgYm90dG9tOiAtNTAlO1xyXG4gIGhlaWdodDogNTAlO1xyXG5cclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgLyogQ2VudGVyIHRoZSBjb250ZW50L3RleHQgb2YgdGhlIC4uLiAqL1xyXG4gIGFsaWduLWNvbnRlbnQ6IGNlbnRlcjtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgLyogUGFkIHRoZSBib3R0b20gb2YgdGhlIC4uLiBieSBoYWxmIG9mIHRoZSBmb250IHNpemUgKi9cclxuICBwYWRkaW5nLWJvdHRvbTogMC41ZW07XHJcblxyXG4gIGNvbG9yOiBoc2xhKDAsIDAlLCAzMCUsIDEpO1xyXG4gIGZvbnQtd2VpZ2h0OiA3MDA7IC8qIGJvbGQgKi9cclxuICAvKiBEbyBub3QgYWxsb3cgdGhlIHVzZXIgdG8gc2VsZWN0IHRoZSB0ZXh0IChpdCdzIGFubm95aW5nKSAqL1xyXG4gIHVzZXItc2VsZWN0OiBub25lO1xyXG59XHJcblxyXG5uei1jYXJkID4gOjpuZy1kZWVwLmFudC1jYXJkLWJvZHkge1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICBvdmVyZmxvdzogaGlkZGVuO1xyXG59XHJcbi8qIE1ha2UgdGhlIGljb25zIGluIHRoZSBjYXJkIGFjdGlvbnMgdG8gdGFrZSB0aGUgd2hvbGUgc3BhY2UsXHJcbiAgIGJlY2F1c2Ugb25seSB0aGUgaWNvbnMgY2FuIGludm9rZSBhIGNsaWNrIGV2ZW50LiAqL1xyXG46aG9zdCA6Om5nLWRlZXAuYW50LWNhcmQtYWN0aW9ucyA+IGxpIHtcclxuICBtYXJnaW46IDA7XHJcbn1cclxuOmhvc3QgOjpuZy1kZWVwLmFudC1jYXJkLWFjdGlvbnMgPiBsaSA+IHNwYW4ge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59XHJcbjpob3N0IDo6bmctZGVlcC5hbnQtY2FyZC1hY3Rpb25zID4gbGkgPiBzcGFuID4gaSB7XHJcbiAgd2lkdGg6IGluaGVyaXQ7XHJcbiAgcGFkZGluZzogOXB4IDA7XHJcbn1cclxuXHJcbi5jYXJkLWRlc2NyaXB0aW9uIHtcclxuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xyXG4gIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XHJcbiAgY29sb3I6IGdyYXk7XHJcbn1cclxuLmNhcmQtY292ZXItaW1hZ2Uge1xyXG4gIGhlaWdodDogMTUwcHg7XHJcbiAgYmFja2dyb3VuZC1wb3NpdGlvbjogY2VudGVyO1xyXG4gIGJhY2tncm91bmQtc2l6ZTogY292ZXI7XHJcbiAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xyXG59XHJcblxyXG4uZHJhd2VyIHtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgaGVpZ2h0OiAxMDAlO1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIGxlZnQ6IDA7XHJcbiAgdG9wOiAwO1xyXG4gIHRyYW5zaXRpb246IGxlZnQgMC4ycyBlYXNlLW91dCwgdG9wIDAuMnMgZWFzZS1vdXQ7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbn1cclxuLmRyYXdlci50b3Age1xyXG4gIHRvcDogLTEwMCU7XHJcbn1cclxuLmRyYXdlci5ib3R0b20ge1xyXG4gIHRvcDogMTAwJTtcclxufVxyXG4uZHJhd2VyLmxlZnQge1xyXG4gIGxlZnQ6IC0xMDAlO1xyXG59XHJcbi5kcmF3ZXIucmlnaHQge1xyXG4gIGxlZnQ6IDEwMCU7XHJcbn1cclxuLmRyYXdlci5kcmF3biB7XHJcbiAgdG9wOiAwO1xyXG4gIGxlZnQ6IDA7XHJcbn1cclxuXHJcbi5kb3dubG9hZC1kcmF3ZXIgPiBkaXYge1xyXG4gIGhlaWdodDogNTAlO1xyXG59XHJcbi5kb3dubG9hZC1kcmF3ZXIgPiBkaXYgPiBhIHtcclxuICBoZWlnaHQ6IDEwMCU7XHJcbiAgdHJhbnNpdGlvbjogYm94LXNoYWRvdyAwLjFzIGVhc2UtaW4tb3V0O1xyXG59XHJcbi5kb3dubG9hZC1kcmF3ZXIgPiBkaXYgPiBhOmhvdmVyIHtcclxuICBib3gtc2hhZG93OiAwcHggMHB4IDRweCAzcHggIzAwMDAwMDRkO1xyXG59XHJcblxyXG5pW256LWljb25dIHtcclxuICBjb2xvcjogIzE4OTBmZjtcclxuICB0cmFuc2l0aW9uOiBmaWx0ZXIgMC4ycyBlYXNlLWluLW91dDtcclxufVxyXG5pW256LWljb25dOmhvdmVyIHtcclxuICBmaWx0ZXI6IGRyb3Atc2hhZG93KDBweCAwcHggMXB4ICMxODkwZmZhYSk7XHJcbn1cclxuIl19 */");
+/* harmony default export */ __webpack_exports__["default"] = ("nz-card {\r\n  max-width: 350px;\r\n  margin: auto;\r\n}\r\n\r\nnz-card > ::ng-deep.ant-card-cover {\r\n  position: relative;\r\n  overflow-y: hidden;\r\n}\r\n\r\n.card-cover-image-overlay {\r\n  cursor: pointer;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  position: absolute;\r\n}\r\n\r\n.card-cover-image-overlay > div {\r\n  position: relative;\r\n  height: 50%;\r\n  width: 100%;\r\n\r\n  /* Locate the ... above the overlay (=negetive the height) */\r\n  top: -50%;\r\n  /* Give the element a border radius from the bottom (50%) to the left and\r\n     right borders of the element (default value 0 - no border radius) */\r\n  border-bottom-right-radius: 50% 0;\r\n  border-bottom-left-radius: 50% 0;\r\n  /* The transition for the top and border values for when the overlay is hovered */\r\n  -webkit-transition: all 0.2s ease-in-out;\r\n  transition: all 0.2s ease-in-out;\r\n\r\n  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, white), to(hsla(0, 0%, 100%, 0.6)));\r\n\r\n  background: linear-gradient(white 50%, hsla(0, 0%, 100%, 0.6));\r\n}\r\n\r\n.card-cover-image-overlay:hover > div {\r\n  /* Locate the ... within the overlay (=negetive half of the height) */\r\n  top: -25%;\r\n  /* Round the borders all the way to the middle of the ... (50%) */\r\n  border-bottom-right-radius: 50% 50%;\r\n  border-bottom-left-radius: 50% 50%;\r\n}\r\n\r\n.card-cover-image-overlay > div > div {\r\n  /* Position the ... in lower half of the ... */\r\n  position: relative;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: -50%;\r\n  height: 50%;\r\n\r\n  display: -webkit-box;\r\n\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n          justify-content: center;\r\n  -webkit-box-orient: vertical;\r\n  -webkit-box-direction: normal;\r\n          flex-direction: column;\r\n  /* Center the content/text of the ... */\r\n  align-content: center;\r\n  text-align: center;\r\n  /* Pad the bottom of the ... by half of the font size */\r\n  padding-bottom: 0.5em;\r\n\r\n  color: hsla(0, 0%, 30%, 1);\r\n  font-weight: 700; /* bold */\r\n  /* Do not allow the user to select the text (it's annoying) */\r\n  -webkit-user-select: none;\r\n     -moz-user-select: none;\r\n      -ms-user-select: none;\r\n          user-select: none;\r\n}\r\n\r\nnz-card > ::ng-deep.ant-card-body {\r\n  position: relative;\r\n  overflow: hidden;\r\n}\r\n\r\n/* Make the icons in the card actions to take the whole space,\r\n   because only the icons can invoke a click event. */\r\n\r\n:host ::ng-deep.ant-card-actions > li {\r\n  margin: 0;\r\n}\r\n\r\n:host ::ng-deep.ant-card-actions > li > span {\r\n  width: 100%;\r\n}\r\n\r\n:host ::ng-deep.ant-card-actions > li > span > i {\r\n  width: inherit;\r\n  padding: 9px 0;\r\n}\r\n\r\n.card-description {\r\n  white-space: nowrap;\r\n  overflow: hidden;\r\n  text-overflow: ellipsis;\r\n  color: gray;\r\n}\r\n\r\n.card-cover-image {\r\n  height: 150px;\r\n  background-position: center;\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\r\n  background-color: #fff;\r\n}\r\n\r\n.drawer {\r\n  position: absolute;\r\n  height: 100%;\r\n  width: 100%;\r\n  left: 0;\r\n  top: 0;\r\n  -webkit-transition: left 0.2s ease-out, top 0.2s ease-out;\r\n  transition: left 0.2s ease-out, top 0.2s ease-out;\r\n  background-color: white;\r\n}\r\n\r\n.drawer.top {\r\n  top: -100%;\r\n}\r\n\r\n.drawer.bottom {\r\n  top: 100%;\r\n}\r\n\r\n.drawer.left {\r\n  left: -100%;\r\n}\r\n\r\n.drawer.right {\r\n  left: 100%;\r\n}\r\n\r\n.drawer.drawn {\r\n  top: 0;\r\n  left: 0;\r\n}\r\n\r\n.download-drawer > div,\r\n.share-drawer > div {\r\n  height: 50%;\r\n}\r\n\r\n.download-drawer > div > a,\r\n.share-drawer > div > a {\r\n  height: 100%;\r\n  -webkit-transition: box-shadow 0.1s ease-in-out;\r\n  transition: box-shadow 0.1s ease-in-out;\r\n}\r\n\r\n.download-drawer > div > a:hover,\r\n.share-drawer > div > a:hover {\r\n  z-index: 1; /* z-index for apearing in front of sibling elements. */\r\n  box-shadow: 0px 0px 4px 3px #0000004d;\r\n}\r\n\r\n.share-drawer > div > a > img {\r\n  height: 100%;\r\n  /* margin: auto; */\r\n  width: 100%;\r\n}\r\n\r\ni[nz-icon] {\r\n  color: #1890ff;\r\n  -webkit-transition: -webkit-filter 0.2s ease-in-out;\r\n  transition: -webkit-filter 0.2s ease-in-out;\r\n  transition: filter 0.2s ease-in-out;\r\n  transition: filter 0.2s ease-in-out, -webkit-filter 0.2s ease-in-out;\r\n}\r\n\r\ni[nz-icon]:hover {\r\n  -webkit-filter: drop-shadow(0px 0px 1px #1890ffaa);\r\n          filter: drop-shadow(0px 0px 1px #1890ffaa);\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc29uZ3MtbWVudS9zb25nLWNhcmQvc29uZy1jYXJkLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxnQkFBZ0I7RUFDaEIsWUFBWTtBQUNkOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLGtCQUFrQjtBQUNwQjs7QUFDQTtFQUNFLGVBQWU7RUFDZixNQUFNO0VBQ04sU0FBUztFQUNULE9BQU87RUFDUCxRQUFRO0VBQ1Isa0JBQWtCO0FBQ3BCOztBQUNBO0VBQ0Usa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxXQUFXOztFQUVYLDREQUE0RDtFQUM1RCxTQUFTO0VBQ1Q7d0VBQ3NFO0VBQ3RFLGlDQUFpQztFQUNqQyxnQ0FBZ0M7RUFDaEMsaUZBQWlGO0VBQ2pGLHdDQUFnQztFQUFoQyxnQ0FBZ0M7O0VBRWhDLCtHQUE4RDs7RUFBOUQsOERBQThEO0FBQ2hFOztBQUNBO0VBQ0UscUVBQXFFO0VBQ3JFLFNBQVM7RUFDVCxpRUFBaUU7RUFDakUsbUNBQW1DO0VBQ25DLGtDQUFrQztBQUNwQzs7QUFDQTtFQUNFLDhDQUE4QztFQUM5QyxrQkFBa0I7RUFDbEIsT0FBTztFQUNQLFFBQVE7RUFDUixZQUFZO0VBQ1osV0FBVzs7RUFFWCxvQkFBYTs7RUFBYixhQUFhO0VBQ2Isd0JBQXVCO1VBQXZCLHVCQUF1QjtFQUN2Qiw0QkFBc0I7RUFBdEIsNkJBQXNCO1VBQXRCLHNCQUFzQjtFQUN0Qix1Q0FBdUM7RUFDdkMscUJBQXFCO0VBQ3JCLGtCQUFrQjtFQUNsQix1REFBdUQ7RUFDdkQscUJBQXFCOztFQUVyQiwwQkFBMEI7RUFDMUIsZ0JBQWdCLEVBQUUsU0FBUztFQUMzQiw2REFBNkQ7RUFDN0QseUJBQWlCO0tBQWpCLHNCQUFpQjtNQUFqQixxQkFBaUI7VUFBakIsaUJBQWlCO0FBQ25COztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLGdCQUFnQjtBQUNsQjs7QUFDQTtxREFDcUQ7O0FBQ3JEO0VBQ0UsU0FBUztBQUNYOztBQUNBO0VBQ0UsV0FBVztBQUNiOztBQUNBO0VBQ0UsY0FBYztFQUNkLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSxtQkFBbUI7RUFDbkIsZ0JBQWdCO0VBQ2hCLHVCQUF1QjtFQUN2QixXQUFXO0FBQ2I7O0FBQ0E7RUFDRSxhQUFhO0VBQ2IsMkJBQTJCO0VBQzNCLHNCQUFzQjtFQUN0Qiw0QkFBNEI7RUFDNUIsc0JBQXNCO0FBQ3hCOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLFlBQVk7RUFDWixXQUFXO0VBQ1gsT0FBTztFQUNQLE1BQU07RUFDTix5REFBaUQ7RUFBakQsaURBQWlEO0VBQ2pELHVCQUF1QjtBQUN6Qjs7QUFDQTtFQUNFLFVBQVU7QUFDWjs7QUFDQTtFQUNFLFNBQVM7QUFDWDs7QUFDQTtFQUNFLFdBQVc7QUFDYjs7QUFDQTtFQUNFLFVBQVU7QUFDWjs7QUFDQTtFQUNFLE1BQU07RUFDTixPQUFPO0FBQ1Q7O0FBRUE7O0VBRUUsV0FBVztBQUNiOztBQUNBOztFQUVFLFlBQVk7RUFDWiwrQ0FBdUM7RUFBdkMsdUNBQXVDO0FBQ3pDOztBQUNBOztFQUVFLFVBQVUsRUFBRSx1REFBdUQ7RUFDbkUscUNBQXFDO0FBQ3ZDOztBQUNBO0VBQ0UsWUFBWTtFQUNaLGtCQUFrQjtFQUNsQixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxjQUFjO0VBQ2QsbURBQW1DO0VBQW5DLDJDQUFtQztFQUFuQyxtQ0FBbUM7RUFBbkMsb0VBQW1DO0FBQ3JDOztBQUNBO0VBQ0Usa0RBQTBDO1VBQTFDLDBDQUEwQztBQUM1QyIsImZpbGUiOiJzcmMvYXBwL3NvbmdzLW1lbnUvc29uZy1jYXJkL3NvbmctY2FyZC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsibnotY2FyZCB7XHJcbiAgbWF4LXdpZHRoOiAzNTBweDtcclxuICBtYXJnaW46IGF1dG87XHJcbn1cclxuXHJcbm56LWNhcmQgPiA6Om5nLWRlZXAuYW50LWNhcmQtY292ZXIge1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICBvdmVyZmxvdy15OiBoaWRkZW47XHJcbn1cclxuLmNhcmQtY292ZXItaW1hZ2Utb3ZlcmxheSB7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIHRvcDogMDtcclxuICBib3R0b206IDA7XHJcbiAgbGVmdDogMDtcclxuICByaWdodDogMDtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbn1cclxuLmNhcmQtY292ZXItaW1hZ2Utb3ZlcmxheSA+IGRpdiB7XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gIGhlaWdodDogNTAlO1xyXG4gIHdpZHRoOiAxMDAlO1xyXG5cclxuICAvKiBMb2NhdGUgdGhlIC4uLiBhYm92ZSB0aGUgb3ZlcmxheSAoPW5lZ2V0aXZlIHRoZSBoZWlnaHQpICovXHJcbiAgdG9wOiAtNTAlO1xyXG4gIC8qIEdpdmUgdGhlIGVsZW1lbnQgYSBib3JkZXIgcmFkaXVzIGZyb20gdGhlIGJvdHRvbSAoNTAlKSB0byB0aGUgbGVmdCBhbmRcclxuICAgICByaWdodCBib3JkZXJzIG9mIHRoZSBlbGVtZW50IChkZWZhdWx0IHZhbHVlIDAgLSBubyBib3JkZXIgcmFkaXVzKSAqL1xyXG4gIGJvcmRlci1ib3R0b20tcmlnaHQtcmFkaXVzOiA1MCUgMDtcclxuICBib3JkZXItYm90dG9tLWxlZnQtcmFkaXVzOiA1MCUgMDtcclxuICAvKiBUaGUgdHJhbnNpdGlvbiBmb3IgdGhlIHRvcCBhbmQgYm9yZGVyIHZhbHVlcyBmb3Igd2hlbiB0aGUgb3ZlcmxheSBpcyBob3ZlcmVkICovXHJcbiAgdHJhbnNpdGlvbjogYWxsIDAuMnMgZWFzZS1pbi1vdXQ7XHJcblxyXG4gIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCh3aGl0ZSA1MCUsIGhzbGEoMCwgMCUsIDEwMCUsIDAuNikpO1xyXG59XHJcbi5jYXJkLWNvdmVyLWltYWdlLW92ZXJsYXk6aG92ZXIgPiBkaXYge1xyXG4gIC8qIExvY2F0ZSB0aGUgLi4uIHdpdGhpbiB0aGUgb3ZlcmxheSAoPW5lZ2V0aXZlIGhhbGYgb2YgdGhlIGhlaWdodCkgKi9cclxuICB0b3A6IC0yNSU7XHJcbiAgLyogUm91bmQgdGhlIGJvcmRlcnMgYWxsIHRoZSB3YXkgdG8gdGhlIG1pZGRsZSBvZiB0aGUgLi4uICg1MCUpICovXHJcbiAgYm9yZGVyLWJvdHRvbS1yaWdodC1yYWRpdXM6IDUwJSA1MCU7XHJcbiAgYm9yZGVyLWJvdHRvbS1sZWZ0LXJhZGl1czogNTAlIDUwJTtcclxufVxyXG4uY2FyZC1jb3Zlci1pbWFnZS1vdmVybGF5ID4gZGl2ID4gZGl2IHtcclxuICAvKiBQb3NpdGlvbiB0aGUgLi4uIGluIGxvd2VyIGhhbGYgb2YgdGhlIC4uLiAqL1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICBsZWZ0OiAwO1xyXG4gIHJpZ2h0OiAwO1xyXG4gIGJvdHRvbTogLTUwJTtcclxuICBoZWlnaHQ6IDUwJTtcclxuXHJcbiAgZGlzcGxheTogZmxleDtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gIC8qIENlbnRlciB0aGUgY29udGVudC90ZXh0IG9mIHRoZSAuLi4gKi9cclxuICBhbGlnbi1jb250ZW50OiBjZW50ZXI7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIC8qIFBhZCB0aGUgYm90dG9tIG9mIHRoZSAuLi4gYnkgaGFsZiBvZiB0aGUgZm9udCBzaXplICovXHJcbiAgcGFkZGluZy1ib3R0b206IDAuNWVtO1xyXG5cclxuICBjb2xvcjogaHNsYSgwLCAwJSwgMzAlLCAxKTtcclxuICBmb250LXdlaWdodDogNzAwOyAvKiBib2xkICovXHJcbiAgLyogRG8gbm90IGFsbG93IHRoZSB1c2VyIHRvIHNlbGVjdCB0aGUgdGV4dCAoaXQncyBhbm5veWluZykgKi9cclxuICB1c2VyLXNlbGVjdDogbm9uZTtcclxufVxyXG5cclxubnotY2FyZCA+IDo6bmctZGVlcC5hbnQtY2FyZC1ib2R5IHtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcclxufVxyXG4vKiBNYWtlIHRoZSBpY29ucyBpbiB0aGUgY2FyZCBhY3Rpb25zIHRvIHRha2UgdGhlIHdob2xlIHNwYWNlLFxyXG4gICBiZWNhdXNlIG9ubHkgdGhlIGljb25zIGNhbiBpbnZva2UgYSBjbGljayBldmVudC4gKi9cclxuOmhvc3QgOjpuZy1kZWVwLmFudC1jYXJkLWFjdGlvbnMgPiBsaSB7XHJcbiAgbWFyZ2luOiAwO1xyXG59XHJcbjpob3N0IDo6bmctZGVlcC5hbnQtY2FyZC1hY3Rpb25zID4gbGkgPiBzcGFuIHtcclxuICB3aWR0aDogMTAwJTtcclxufVxyXG46aG9zdCA6Om5nLWRlZXAuYW50LWNhcmQtYWN0aW9ucyA+IGxpID4gc3BhbiA+IGkge1xyXG4gIHdpZHRoOiBpbmhlcml0O1xyXG4gIHBhZGRpbmc6IDlweCAwO1xyXG59XHJcblxyXG4uY2FyZC1kZXNjcmlwdGlvbiB7XHJcbiAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcclxuICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gIHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzO1xyXG4gIGNvbG9yOiBncmF5O1xyXG59XHJcbi5jYXJkLWNvdmVyLWltYWdlIHtcclxuICBoZWlnaHQ6IDE1MHB4O1xyXG4gIGJhY2tncm91bmQtcG9zaXRpb246IGNlbnRlcjtcclxuICBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xyXG4gIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcclxufVxyXG5cclxuLmRyYXdlciB7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIGhlaWdodDogMTAwJTtcclxuICB3aWR0aDogMTAwJTtcclxuICBsZWZ0OiAwO1xyXG4gIHRvcDogMDtcclxuICB0cmFuc2l0aW9uOiBsZWZ0IDAuMnMgZWFzZS1vdXQsIHRvcCAwLjJzIGVhc2Utb3V0O1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG59XHJcbi5kcmF3ZXIudG9wIHtcclxuICB0b3A6IC0xMDAlO1xyXG59XHJcbi5kcmF3ZXIuYm90dG9tIHtcclxuICB0b3A6IDEwMCU7XHJcbn1cclxuLmRyYXdlci5sZWZ0IHtcclxuICBsZWZ0OiAtMTAwJTtcclxufVxyXG4uZHJhd2VyLnJpZ2h0IHtcclxuICBsZWZ0OiAxMDAlO1xyXG59XHJcbi5kcmF3ZXIuZHJhd24ge1xyXG4gIHRvcDogMDtcclxuICBsZWZ0OiAwO1xyXG59XHJcblxyXG4uZG93bmxvYWQtZHJhd2VyID4gZGl2LFxyXG4uc2hhcmUtZHJhd2VyID4gZGl2IHtcclxuICBoZWlnaHQ6IDUwJTtcclxufVxyXG4uZG93bmxvYWQtZHJhd2VyID4gZGl2ID4gYSxcclxuLnNoYXJlLWRyYXdlciA+IGRpdiA+IGEge1xyXG4gIGhlaWdodDogMTAwJTtcclxuICB0cmFuc2l0aW9uOiBib3gtc2hhZG93IDAuMXMgZWFzZS1pbi1vdXQ7XHJcbn1cclxuLmRvd25sb2FkLWRyYXdlciA+IGRpdiA+IGE6aG92ZXIsXHJcbi5zaGFyZS1kcmF3ZXIgPiBkaXYgPiBhOmhvdmVyIHtcclxuICB6LWluZGV4OiAxOyAvKiB6LWluZGV4IGZvciBhcGVhcmluZyBpbiBmcm9udCBvZiBzaWJsaW5nIGVsZW1lbnRzLiAqL1xyXG4gIGJveC1zaGFkb3c6IDBweCAwcHggNHB4IDNweCAjMDAwMDAwNGQ7XHJcbn1cclxuLnNoYXJlLWRyYXdlciA+IGRpdiA+IGEgPiBpbWcge1xyXG4gIGhlaWdodDogMTAwJTtcclxuICAvKiBtYXJnaW46IGF1dG87ICovXHJcbiAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbmlbbnotaWNvbl0ge1xyXG4gIGNvbG9yOiAjMTg5MGZmO1xyXG4gIHRyYW5zaXRpb246IGZpbHRlciAwLjJzIGVhc2UtaW4tb3V0O1xyXG59XHJcbmlbbnotaWNvbl06aG92ZXIge1xyXG4gIGZpbHRlcjogZHJvcC1zaGFkb3coMHB4IDBweCAxcHggIzE4OTBmZmFhKTtcclxufVxyXG4iXX0= */");
 
 /***/ }),
 
@@ -940,1253 +940,1432 @@ __webpack_require__.r(__webpack_exports__);
 
 const SONGS = [
     {
-        img: "https://img.youtube.com/vi/P57u7-LwBfI/mqdefault.jpg",
+        urlId: "etude-of-a-songbird",
+        youtubeId: "P57u7-LwBfI",
         title: "Etude of a Songbird",
         source: "Breathe",
         composer: "Laura Platt",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/6tZPKke2ugI/mqdefault.jpg",
+        urlId: "goodbye-to-a-world",
+        youtubeId: "6tZPKke2ugI",
         title: "Goodbye To A World",
         source: "Porter Robinson",
         composer: "Porter Robinson",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/EerhhZ8cZtw/mqdefault.jpg",
+        urlId: "perfume",
+        youtubeId: "EerhhZ8cZtw",
         title: "Perfume",
         source: "fusq",
         composer: "fusq",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/c54P5qA-UP0/mqdefault.jpg",
+        urlId: "hot-milk",
+        youtubeId: "c54P5qA-UP0",
         title: "Hot Milk",
         source: "Snail's House",
         composer: "Snail's House",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/tJBtuw2Q75c/mqdefault.jpg",
+        urlId: "super-animal-theme",
+        youtubeId: "tJBtuw2Q75c",
         title: "Super Animal Theme",
         source: "Super Animal Royale",
         composer: "Jake Butineau",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/tOOwaMhC0BQ/mqdefault.jpg",
+        urlId: "exhale",
+        youtubeId: "tOOwaMhC0BQ",
         title: "Exhale",
         source: "Celeste",
         composer: "Lena Raine",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/xJxFl-mcK9U/mqdefault.jpg",
+        urlId: "sweet-sweet-canyon",
+        youtubeId: "xJxFl-mcK9U",
         title: "Sweet Sweet Canyon",
         source: "Mario Kart 8",
         composer: "Shiho Fujii",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/gH8vd4PpUJ0/mqdefault.jpg",
+        urlId: "marble-soda",
+        youtubeId: "gH8vd4PpUJ0",
         title: "Marble Soda",
         source: "Shawn Wasabi",
         composer: "Shawn Wasabi",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/iTUHx6kS7ws/mqdefault.jpg",
+        urlId: "right-now",
+        youtubeId: "iTUHx6kS7ws",
         title: "Right Now",
         source: "The Living Tombstone",
         composer: "The Living Tombstone",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/5YkPSWIOViM/mqdefault.jpg",
+        urlId: "rise",
+        youtubeId: "5YkPSWIOViM",
         title: "RISE",
         source: "League of Legends Worlds 2018",
         composer: "The Glitch Mob, Mako and The Word Alive",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/rTiGD4jm67M/mqdefault.jpg",
+        urlId: "-catgroove-piano-cover",
+        youtubeId: "rTiGD4jm67M",
         title: "Catgroove (Piano Cover)",
         source: "PandaTooth x LyricWulf",
         composer: "Parov Stelar",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/Wo4zW5MsBWs/mqdefault.jpg",
+        urlId: "ready-as-ill-ever-be",
+        youtubeId: "Wo4zW5MsBWs",
         title: "Ready as I'll Ever Be",
         source: "Tangled: The Series",
         composer: "Alan Menken",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/shi3yv-9n54/mqdefault.jpg",
+        urlId: "fish",
+        youtubeId: "shi3yv-9n54",
         title: "Fish",
         source: "JonKaGor",
         composer: "JonKaGor",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/iA7QEtwgti0/mqdefault.jpg",
+        urlId: "rush-lyric",
+        youtubeId: "iA7QEtwgti0",
         title: "Rush Lyric",
         source: "LyricWulf",
         composer: "Sheet Music Boss",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/YqM2xuqQqm4/mqdefault.jpg",
+        urlId: "we-deserve-to-shine",
+        youtubeId: "YqM2xuqQqm4",
         title: "We Deserve to Shine",
         source: "Steven Universe",
         composer: "Rebecca Sugar",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/LDK8i9pjtqs/mqdefault.jpg",
+        urlId: "moonsetter",
+        youtubeId: "LDK8i9pjtqs",
         title: "Moonsetter",
         source: "Homestuck",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/6rNG3ixpfEo/mqdefault.jpg",
+        urlId: "bubble-tea",
+        youtubeId: "6rNG3ixpfEo",
         title: "Bubble Tea",
         source: "dark cat",
         composer: "dark cat",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/Uj77rXONpJ0/mqdefault.jpg",
+        urlId: "pokemart-theme",
+        youtubeId: "Uj77rXONpJ0",
         title: "PokéMart Theme",
         source: "Pokémon Ruby/Sapphire/Emerald",
         composer: "Go Ichinose",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/9cj4BHlZ2UQ/mqdefault.jpg",
+        urlId: "paw-patrol-theme",
+        youtubeId: "9cj4BHlZ2UQ",
         title: "PAW Patrol Theme",
         source: "PAW Patrol",
         composer: "Little Ditto",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/CP6VZENSe5w/mqdefault.jpg",
+        urlId: "an-unwavering-heart",
+        youtubeId: "CP6VZENSe5w",
         title: "An Unwavering Heart",
         source: "Pokemon X/Y",
         composer: "Shota Kageyama",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/FentCyS1O5k/mqdefault.jpg",
+        urlId: "hello-world",
+        youtubeId: "FentCyS1O5k",
         title: "Hello World",
         source: "Louie Zong",
         composer: "Louie Zong",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/XGYyEiAjBf8/mqdefault.jpg",
+        urlId: "ruby-rider",
+        youtubeId: "XGYyEiAjBf8",
         title: "Ruby Rider",
         source: "Steven Universe",
         composer: "Jeff Liu",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/9jHUBuEZHbI/mqdefault.jpg",
+        urlId: "tribe-of-heavenly-kami",
+        youtubeId: "9jHUBuEZHbI",
         title: "Tribe of Heavenly Kami",
         source: "Ōkami",
         composer: "Rei Kondo",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/f_jjy5BlgjE/mqdefault.jpg",
+        urlId: "little-one",
+        youtubeId: "f_jjy5BlgjE",
         title: "Little One",
         source: "Detroit: Become Human",
         composer: "Philip Sheppard",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/yR7ahR5ouZI/mqdefault.jpg",
+        urlId: "dramophone",
+        youtubeId: "yR7ahR5ouZI",
         title: "Dramophone",
         source: "Caravan Palace",
         composer: "Caravan Palace",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/otW95iPB_LY/mqdefault.jpg",
+        urlId: "odd-future",
+        youtubeId: "otW95iPB_LY",
         title: "Odd Future",
         source: "My Hero Academia OP 4",
         composer: "Yuki Hayashi",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/itQD8B90tTk/mqdefault.jpg",
+        urlId: "arstotzkan-anthem",
+        youtubeId: "itQD8B90tTk",
         title: "Arstotzkan Anthem",
         source: "Papers, Please Main Theme",
         composer: "Lucas Pope",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/gF-9APdJkcI/mqdefault.jpg",
+        urlId: "pixel-galaxy",
+        youtubeId: "gF-9APdJkcI",
         title: "Pixel Galaxy",
         source: "Snail's House",
         composer: "Snail's House",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/4cI8JtjIMzo/mqdefault.jpg",
+        urlId: "yiay-piano-remix",
+        youtubeId: "4cI8JtjIMzo",
         title: "YIAY (Piano Remix)",
         source: "Jacksfilms",
         composer: "Jacksfilms",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/RxIrtUvr9G4/mqdefault.jpg",
+        urlId: "through-the-fire-and-flames",
+        youtubeId: "RxIrtUvr9G4",
         title: "Through the Fire and Flames",
         source: "Dragonforce",
         composer: "Dragonforce",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/4nGZDidTTz8/mqdefault.jpg",
+        urlId: "mii-plaza",
+        youtubeId: "4nGZDidTTz8",
         title: "Mii Plaza",
         source: "Mii Channel Theme",
         composer: "Kazumi Totaka",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/QyCsLINxijc/mqdefault.jpg",
+        urlId: "the-eevee-song",
+        youtubeId: "QyCsLINxijc",
         title: "The Eevee Song",
         source: "Random Encounters",
         composer: "Random Encounters",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/m6-yxp2Cygg/mqdefault.jpg",
+        urlId: "issuns-theme",
+        youtubeId: "m6-yxp2Cygg",
         title: "Issun's Theme",
         source: "Okami",
         composer: "Hiroshi Yamaguchi",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/XOxowDPJBt8/mqdefault.jpg",
+        urlId: "blueshift",
+        youtubeId: "XOxowDPJBt8",
         title: "Blueshift",
         source: "Exurb1a",
         composer: "Exurb1a",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/GegS8INc3ps/mqdefault.jpg",
+        urlId: "parasailing-minigame",
+        youtubeId: "GegS8INc3ps",
         title: "Parasailing Minigame",
         source: "Breath of the Wild",
         composer: "Manaka Kataoka",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/DhljN7BbEas/mqdefault.jpg",
+        urlId: "no-surprises-piano-stride",
+        youtubeId: "DhljN7BbEas",
         title: "No Surprises (Piano Stride)",
         source: "Westworld",
         composer: "Ramin Djawadi",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/gXIvln7Kwrg/mqdefault.jpg",
+        urlId: "cold",
+        youtubeId: "gXIvln7Kwrg",
         title: "Cold",
         source: "RWBY",
         composer: "Jeff Williams",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/ORapqw2ru4M/mqdefault.jpg",
+        urlId: "shelter",
+        youtubeId: "ORapqw2ru4M",
         title: "Shelter",
         source: "Porter Robinson & Madeon",
         composer: "Porter Robinson & Madeon",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/3OKSroKAK88/mqdefault.jpg",
+        urlId: "believer",
+        youtubeId: "3OKSroKAK88",
         title: "Believer",
         source: "Imagine Dragons",
         composer: "Imagine Dragons",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/10Ry2uOnXoo/mqdefault.jpg",
+        urlId: "the-dog-wrestler-waltz",
+        youtubeId: "10Ry2uOnXoo",
         title: "The Dog Wrestler Waltz",
         source: "Exurb1a",
         composer: "Exurb1a",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/RQmQ3xBoGeo/mqdefault.jpg",
+        urlId: "the-wolf",
+        youtubeId: "RQmQ3xBoGeo",
         title: "The Wolf",
         source: "SIAMÉS",
         composer: "SIAMÉS",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/51aAXlEfwYg/mqdefault.jpg",
+        urlId: "battle-zinnia",
+        youtubeId: "51aAXlEfwYg",
         title: "Battle! Zinnia",
         source: "Pokemon ORAS",
         composer: "Shota Kageyama",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/y8ok8geXiNk/mqdefault.jpg",
+        urlId: "otter-pop",
+        youtubeId: "y8ok8geXiNk",
         title: "Otter Pop",
         source: "Shawn Wasabi",
         composer: "Shawn Wasabi",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/tXFPo6LXfuU/mqdefault.jpg",
+        urlId: "phase-2",
+        youtubeId: "tXFPo6LXfuU",
         title: "Phase 2",
         source: "Disbelief Papyrus",
         composer: "JimmyTheBassist",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/Gx47FE1Soww/mqdefault.jpg",
+        urlId: "lone-digger",
+        youtubeId: "Gx47FE1Soww",
         title: "Lone Digger",
         source: "‹ |°_°| ›",
         composer: "Caravan Palace",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/rBeang8p74I/mqdefault.jpg",
+        urlId: "demolitale-main-theme",
+        youtubeId: "rBeang8p74I",
         title: "Demolitale Main Theme",
         source: "Demolitale",
         composer: "LyricWulf",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/61WsFfTzOQg/mqdefault.jpg",
+        urlId: "the-calm",
+        youtubeId: "61WsFfTzOQg",
         title: "The Calm",
         source: "LyricWulf Original Song",
         composer: "Wulfenite",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/JG-ujtkrdOg/mqdefault.jpg",
+        urlId: "ironic",
+        youtubeId: "JG-ujtkrdOg",
         title: "Ironic",
         source: "Words Words Words",
         composer: "Bo Burnham",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/QQB1OKkMda4/mqdefault.jpg",
+        urlId: "forlorn",
+        youtubeId: "QQB1OKkMda4",
         title: "Forlorn",
         source: "Undertale Yellow",
         composer: "MyNewSoundtrack, Master Sword",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/WjyOEdFn4qg/mqdefault.jpg",
+        urlId: "final-chance",
+        youtubeId: "WjyOEdFn4qg",
         title: "Final Chance",
         source: "Undertale AU",
         composer: "Fanmade UNDERTALE AU",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/7GwtK2DXbFk/mqdefault.jpg",
+        urlId: "aviator",
+        youtubeId: "7GwtK2DXbFk",
         title: "Aviator",
         source: "OneShot Soundtrack",
         composer: "Nightmargin",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/jwjPmjqcFTI/mqdefault.jpg",
+        urlId: "moonmen",
+        youtubeId: "jwjPmjqcFTI",
         title: "Moonmen",
         source: "Pocket Mortys OST",
         composer: "Ryan Elder",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/5HZEorKnWcM/mqdefault.jpg",
+        urlId: "mogolovonio-mp3",
+        youtubeId: "5HZEorKnWcM",
         title: "MOGOLOVONIO.MP3",
         source: "april fool to you",
         composer: "SR POLO & TOBO FOOX",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/2vq--uOOpwM/mqdefault.jpg",
+        urlId: "niko-and-the-world-machine",
+        youtubeId: "2vq--uOOpwM",
         title: "Niko and the World Machine",
         source: "OneShot Soundtrack",
         composer: "Nightmargin (Casey Gu)",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/p28uVJ_7tWY/mqdefault.jpg",
+        urlId: "to-the-gateway",
+        youtubeId: "p28uVJ_7tWY",
         title: "To the Gateway",
         source: "Super Mario Galaxy",
         composer: "Mahito Yokota",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/FD-ictCbjJA/mqdefault.jpg",
+        urlId: "we-are-number-one",
+        youtubeId: "FD-ictCbjJA",
         title: "We Are Number One",
         source: "LazyTown",
         composer: "MÃ¡ni Svavarsson",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/4k2DZw5S1cs/mqdefault.jpg",
+        urlId: "underline",
+        youtubeId: "4k2DZw5S1cs",
         title: "Underline",
         source: "Fanmade UNDERTALE AU",
         composer: "Xalia",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/AB08g5EEcjI/mqdefault.jpg",
+        urlId: "megalovania-fandom-medley",
+        youtubeId: "AB08g5EEcjI",
         title: "MegaloVania FANDOM MEDLEY",
         source: "Fanmade UNDERTALE AU, Homestuck, Gravity Falls, Smash, FNAF, Doctor Who, Steven Universe, Adventure Time, Gumball, and Star vs. the Forces of Evil!",
         composer: "Yan Ade",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/HaNAOj32TfE/mqdefault.jpg",
+        urlId: "ewe",
+        youtubeId: "HaNAOj32TfE",
         title: "ewe",
         source: "LyricWulf Original Composition",
         composer: "LyricWulf",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/29_Ti5xVBEI/mqdefault.jpg",
+        urlId: "champion-cynthia",
+        youtubeId: "29_Ti5xVBEI",
         title: "Champion Cynthia",
         source: "PokÃ©mon Diamond & PokÃ©mon Pearl: Super Music Collection",
         composer: "Go Ichinose",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/cHLhC8Od5JU/mqdefault.jpg",
+        urlId: "waterfall",
+        youtubeId: "cHLhC8Od5JU",
         title: "Waterfall",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/jo1mvfNW630/mqdefault.jpg",
+        urlId: "karlas-lullaby",
+        youtubeId: "jo1mvfNW630",
         title: "Karla's Lullaby",
         source: "Words",
         composer: "Louie Zong",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/se7K-3eHMjo/mqdefault.jpg",
+        urlId: "fourteen-residents",
+        youtubeId: "se7K-3eHMjo",
         title: "Fourteen Residents",
         source: "OFF",
         composer: "Alias Conrad Coldwood",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/JBWMn3CdPN8/mqdefault.jpg",
+        urlId: "hypnotik",
+        youtubeId: "JBWMn3CdPN8",
         title: "HYPNOTIK",
         source: "KiseijÅ« Sei no Kakuritsu (Parasyte -the maxim-)",
         composer: "Ken Arai",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/X2N3XvZCpIc/mqdefault.jpg",
+        urlId: "supermoon",
+        youtubeId: "X2N3XvZCpIc",
         title: "Supermoon",
         source: "No Man's Sky: Music for an Infinite Universe",
         composer: "65daysofstatic",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/kyoTZQ-VSt4/mqdefault.jpg",
+        urlId: "again",
+        youtubeId: "kyoTZQ-VSt4",
         title: "Again",
         source: "Shigatsu wa Kimi no Uso (Your Lie in April)",
         composer: "Masaru Yokoyama",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/2-cFJEqIrVk/mqdefault.jpg",
+        urlId: "just-3-days",
+        youtubeId: "2-cFJEqIrVk",
         title: "Just 3 Days",
         source: "Majora's Mask Song",
         composer: "MandoPony",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/waLTe4j4LjE/mqdefault.jpg",
+        urlId: "amarillo",
+        youtubeId: "waLTe4j4LjE",
         title: "Amarillo",
         source: "The Fall",
         composer: "Gorillaz",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/C3SykOb6aqo/mqdefault.jpg",
+        urlId: "land-of-hints",
+        youtubeId: "C3SykOb6aqo",
         title: "Land of Hints",
         source: "LISA the Joyful Soundtrack",
         composer: "Widdly 2 Diddly",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/spIWGAnp_3w/mqdefault.jpg",
+        urlId: "deep-piano",
+        youtubeId: "spIWGAnp_3w",
         title: "#Deep [Piano]",
         source: "what.",
         composer: "Bo Burnham",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/KkVff0gxC2c/mqdefault.jpg",
+        urlId: "deep-piano-and-voice",
+        youtubeId: "KkVff0gxC2c",
         title: "#Deep [Piano and Voice]",
         source: "what.",
         composer: "Bo Burnham",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/FoEB9mgrMzI/mqdefault.jpg",
+        urlId: "wishing",
+        youtubeId: "FoEB9mgrMzI",
         title: "Wishing",
         source: "Re:Zero kara Hajimeru Isekai Seikatsu (Starting Life in Another World)",
         composer: "Hige Driver, Ayato Shinozaki",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/lPbxlkO3KVE/mqdefault.jpg",
+        urlId: "edgy-sans-is-edgy",
+        youtubeId: "lPbxlkO3KVE",
         title: "Edgy Sans is Edgy",
         source: "Fanmade UNDERTALE AU",
         composer: "Jeffrey Watkins",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/ope9jAWeu80/mqdefault.jpg",
+        urlId: "how-far-ill-go",
+        youtubeId: "ope9jAWeu80",
         title: "How Far I'll Go",
         source: "Moana (Original Motion Picture Soundtrack)",
         composer: "Lin-Manuel Miranda",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/oAWO56Bl5FA/mqdefault.jpg",
+        urlId: "lazy-afternoons",
+        youtubeId: "oAWO56Bl5FA",
         title: "Lazy Afternoons",
         source: "Kingdom Hearts Piano Collections",
         composer: "Yoko Shimomura, Sachiko Miyano",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/7HtaJKneBMk/mqdefault.jpg",
+        urlId: "sugar-coma-foxtrot",
+        youtubeId: "7HtaJKneBMk",
         title: "Sugar Coma Foxtrot",
         source: "HOME OST",
         composer: "xLightningWolFx",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/wOWe33No8m0/mqdefault.jpg",
+        urlId: "death-by-glamour",
+        youtubeId: "wOWe33No8m0",
         title: "Death by Glamour",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/q_JvkaHLPvQ/mqdefault.jpg",
+        urlId: "let-it-be",
+        youtubeId: "q_JvkaHLPvQ",
         title: "Let It Be",
         source: "Miracle",
         composer: "Blackmill",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/0C5xp2WKKdM/mqdefault.jpg",
+        urlId: "heartache",
+        youtubeId: "0C5xp2WKKdM",
         title: "Heartache",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/2PtQZlbp5CY/mqdefault.jpg",
+        urlId: "battle-against-a-true-parent",
+        youtubeId: "2PtQZlbp5CY",
         title: "Battle Against a True Parent",
         source: "Fanmade UNDERTALE AU",
         composer: "Whirligig231",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/3ud93T3-Mgs/mqdefault.jpg",
+        urlId: "bonetrousle-underswap",
+        youtubeId: "3ud93T3-Mgs",
         title: "Bonetrousle (Underswap)",
         source: "Fanmade UNDERTALE AU",
         composer: "nerdylizardeperson",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/ghwlmbHDQMw/mqdefault.jpg",
+        urlId: "mother-earth",
+        youtubeId: "ghwlmbHDQMw",
         title: "Mother Earth",
         source: "Mother 1+2",
         composer: "Hirokazu Tanaka",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/CGBLjkg2-_8/mqdefault.jpg",
+        urlId: "outset-island",
+        youtubeId: "CGBLjkg2-_8",
         title: "Outset Island",
         source: "The Legend of Zelda: The Wind Waker",
         composer: "Kenta Nagata, Hajime Wakai, Toru Minegishi, Koji Kondo",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/KmBiqJCpGUU/mqdefault.jpg",
+        urlId: "backbone",
+        youtubeId: "KmBiqJCpGUU",
         title: "Backbone",
         source: "Fanmade UNDERTALE AU",
         composer: "Sean Evans [Lone]",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/_Dda2PebeIA/mqdefault.jpg",
+        urlId: "bonetrousle",
+        youtubeId: "_Dda2PebeIA",
         title: "Bonetrousle",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/-wZHV13hrvc/mqdefault.jpg",
+        urlId: "foxs-forgotten-love-krystal",
+        youtubeId: "-wZHV13hrvc",
         title: "Fox's Forgotten Love, Krystal",
         source: "Star Fox Command",
         composer: "Hajime Wakai",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/zF6R3bMRWOU/mqdefault.jpg",
+        urlId: "showtime-piano-refrain",
+        youtubeId: "zF6R3bMRWOU",
         title: "Showtime (Piano Refrain)",
         source: "Homestuck Vol. 1â€‹-â€‹4",
         composer: "Malcolm Brown, Kevin Regamey",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/qyIXXFL3I2w/mqdefault.jpg",
+        urlId: "thundersnail",
+        youtubeId: "qyIXXFL3I2w",
         title: "Thundersnail",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/3qqfUe_-jZA/mqdefault.jpg",
+        urlId: "hes-my-dad",
+        youtubeId: "3qqfUe_-jZA",
         title: "He's My Dad",
         source: "LISA the Joyful Soundtrack",
         composer: "Widdly 2 Diddly",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/MZdogDXQJm0/mqdefault.jpg",
+        urlId: "art-is-dead-piano",
+        youtubeId: "MZdogDXQJm0",
         title: "art is dead. [Piano]",
         source: "Words Words Words",
         composer: "Bo Burnham",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/Rn0Zso6u7mI/mqdefault.jpg",
+        urlId: "nyeh-heh-heh-bonetrousle",
+        youtubeId: "Rn0Zso6u7mI",
         title: "Nyeh Heh Heh! & Bonetrousle",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/BSg0UD51Rhs/mqdefault.jpg",
+        urlId: "art-is-dead-piano-and-voice",
+        youtubeId: "BSg0UD51Rhs",
         title: "art is dead. [Piano and Voice]",
         source: "Words Words Words",
         composer: "Bo Burnham",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/_Xr-hIdP_yQ/mqdefault.jpg",
+        urlId: "unnecessary-tension",
+        youtubeId: "_Xr-hIdP_yQ",
         title: "Unnecessary Tension",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/P6nz4-PHQbk/mqdefault.jpg",
+        urlId: "wrong-enemy",
+        youtubeId: "P6nz4-PHQbk",
         title: "Wrong Enemy ?!",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/MrN4UpxhsxE/mqdefault.jpg",
+        urlId: "live-death-report",
+        youtubeId: "MrN4UpxhsxE",
         title: "Live & Death Report",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/sYOF1eJiZtk/mqdefault.jpg",
+        urlId: "shes-playing-piano",
+        youtubeId: "sYOF1eJiZtk",
         title: "She's Playing Piano",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/GuLhZRzAlzc/mqdefault.jpg",
+        urlId: "snow-fairy",
+        youtubeId: "GuLhZRzAlzc",
         title: "Snow Fairy",
         source: "Fairy Tail",
         composer: "FUNKIST, NateWantsToBattle",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/ZKYIylDO5_I/mqdefault.jpg",
+        urlId: "oh-one-true-love",
+        youtubeId: "ZKYIylDO5_I",
         title: "Oh! One True Love",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/uGQTVGUso9k/mqdefault.jpg",
+        urlId: "gourmet-race",
+        youtubeId: "uGQTVGUso9k",
         title: "Gourmet Race",
         source: "Kirby Super Star",
         composer: "Jun Ishikawa, Dan Miyakawa",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/ok3O805bfAM/mqdefault.jpg",
+        urlId: "lower-your-expectations-piano",
+        youtubeId: "ok3O805bfAM",
         title: "Lower Your Expectations [Piano]",
         source: "Make Happy",
         composer: "Bo Burnham",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/bu5SF_xk8bw/mqdefault.jpg",
+        urlId: "histrousle",
+        youtubeId: "bu5SF_xk8bw",
         title: "Histrousle",
         source: "Fanmade UNDERTALE AU",
         composer: "Keno9988ii",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/2pLJ00yWlZo/mqdefault.jpg",
+        urlId: "ori-lost-in-the-storm",
+        youtubeId: "2pLJ00yWlZo",
         title: "Ori, Lost in the Storm",
         source: "Ori and the Blind Forest (Original Soundtrack)",
         composer: "Gareth Coker",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/gcxKvYdDH4A/mqdefault.jpg",
+        urlId: "power-of-neo-ikarus-remix",
+        youtubeId: "gcxKvYdDH4A",
         title: 'Power of "NEO" (IKARUS Remix)',
         source: "Fanmade UNDERTALE AU",
         composer: "IKarus",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/1PiX8y04ibo/mqdefault.jpg",
+        urlId: "battle-against-a-true-hero",
+        youtubeId: "1PiX8y04ibo",
         title: "Battle Against a True Hero",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/T5pbrjMSxjs/mqdefault.jpg",
+        urlId: "are-you-happy-piano",
+        youtubeId: "T5pbrjMSxjs",
         title: "Are You Happy? [Piano]",
         source: "Make Happy",
         composer: "Bo Burnham",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/MY9Y7GUZS4o/mqdefault.jpg",
+        urlId: "straight-white-male-piano",
+        youtubeId: "MY9Y7GUZS4o",
         title: "Straight White Male [Piano]",
         source: "Make Happy",
         composer: "Bo Burnham",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/sQEihEB-Tfo/mqdefault.jpg",
+        urlId: "kill-yourself-piano",
+        youtubeId: "sQEihEB-Tfo",
         title: "Kill Yourself [Piano]",
         source: "Make Happy",
         composer: "Bo Burnham",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/otmmT7A3zGw/mqdefault.jpg",
+        urlId: "sad-piano",
+        youtubeId: "otmmT7A3zGw",
         title: "Sad [Piano]",
         source: "what.",
         composer: "Bo Burnham",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/OOpgiEP8xfc/mqdefault.jpg",
+        urlId: "drop-pop-candy",
+        youtubeId: "OOpgiEP8xfc",
         title: "Drop Pop Candy",
         source: "No Title+",
         composer: "Giga-P",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/oKhE908PdXY/mqdefault.jpg",
+        urlId: "lower-your-expectations-piano-and-voice",
+        youtubeId: "oKhE908PdXY",
         title: "Lower Your Expectations [Piano and Voice]",
         source: "Make Happy",
         composer: "Bo Burnham",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/GQk9uK1DDnM/mqdefault.jpg",
+        urlId: "battle-theme",
+        youtubeId: "GQk9uK1DDnM",
         title: "Battle Theme",
         source: "Final Fantasy X",
         composer: "Nobuo Uematsu",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/QERryArA4qo/mqdefault.jpg",
+        urlId: "technolight",
+        youtubeId: "QERryArA4qo",
         title: "Technolight",
         source: "LyricWulf Original Composition",
         composer: "LyricWulf",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/tnFtK9lcJTs/mqdefault.jpg",
+        urlId: "kill-yourself-piano-and-voice",
+        youtubeId: "tnFtK9lcJTs",
         title: "Kill Yourself [Piano and Voice]",
         source: "Make Happy",
         composer: "Bo Burnham",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/27OZgSe7WJM/mqdefault.jpg",
+        urlId: "disbelief",
+        youtubeId: "27OZgSe7WJM",
         title: "Disbelief",
         source: "Fanmade UNDERTALE AU",
         composer: "ROCK CANDY (DBOYD x KOMMISAR)",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/rKPuSjB1VZI/mqdefault.jpg",
+        urlId: "are-you-happy-piano-and-voice",
+        youtubeId: "rKPuSjB1VZI",
         title: "Are You Happy? [Piano and Voice]",
         source: "Make Happy",
         composer: "Bo Burnham",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/9br9mVz9KaY/mqdefault.jpg",
+        urlId: "with-your-drilla",
+        youtubeId: "9br9mVz9KaY",
         title: "With Your Drillâ€¦",
         source: "Tengen Toppa Gurren Lagann OST 1",
         composer: "Taku Iwasaki",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/VV1PCUJm8lU/mqdefault.jpg",
+        urlId: "quiet-water",
+        youtubeId: "VV1PCUJm8lU",
         title: "Quiet Water",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/94seJuUBe-E/mqdefault.jpg",
+        urlId: "bird-that-carries-you-over-a-disproportionately-small-gap",
+        youtubeId: "94seJuUBe-E",
         title: "Bird That Carries You Over a Disproportionately Small Gap",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/c7FVeokCIW4/mqdefault.jpg",
+        urlId: "stronger-than-you",
+        youtubeId: "c7FVeokCIW4",
         title: "Stronger Than You",
         source: "FUSION MIXTAPE",
         composer: "Rebecca Sugar",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/Uu777jQw8vU/mqdefault.jpg",
+        urlId: "straight-white-male-piano-and-voice",
+        youtubeId: "Uu777jQw8vU",
         title: "Straight White Male [Piano and Voice]",
         source: "Make Happy",
         composer: "Bo Burnham",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/G3tWQxI-dPo/mqdefault.jpg",
+        urlId: "metal-crusher",
+        youtubeId: "G3tWQxI-dPo",
         title: "Metal Crusher",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/CFGDAnelVDE/mqdefault.jpg",
+        urlId: "sad-piano-and-voice",
+        youtubeId: "CFGDAnelVDE",
         title: "Sad [Piano and Voice]",
         source: "what.",
         composer: "Bo Burnham",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/ZzlSOBzOTOI/mqdefault.jpg",
+        urlId: "believe-me",
+        youtubeId: "ZzlSOBzOTOI",
         title: "Believe Me",
         source: "Steins;Gate",
         composer: "Takeshi Abo",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/Vr0JrIQ8yvY/mqdefault.jpg",
+        urlId: "why-am-i-so-happy",
+        youtubeId: "Vr0JrIQ8yvY",
         title: "Why Am I So Happy?",
         source: "Why Am I So Happy?",
         composer: "Spose",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/q8kvvAVUivU/mqdefault.jpg",
+        urlId: "prove-it-all",
+        youtubeId: "q8kvvAVUivU",
         title: "Prove It All",
         source: "LyricWulf Original Composition",
         composer: "LyricWulf",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/ageNKR7g55g/mqdefault.jpg",
+        urlId: "once-upon-a-time",
+        youtubeId: "ageNKR7g55g",
         title: "Once Upon a Time",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/-7M0CQ0fuV4/mqdefault.jpg",
+        urlId: "alphys-takes-action",
+        youtubeId: "-7M0CQ0fuV4",
         title: "Alphys Takes Action",
         source: "Fanmade UNDERTALE AU",
         composer: "coffE K",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/y3iiJldFZ-Y/mqdefault.jpg",
+        urlId: "alphys",
+        youtubeId: "y3iiJldFZ-Y",
         title: "Alphys",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/KlqxVi4UPb4/mqdefault.jpg",
+        urlId: "amalgam",
+        youtubeId: "KlqxVi4UPb4",
         title: "Amalgam",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/A47tIVw-ts0/mqdefault.jpg",
+        urlId: "fighting",
+        youtubeId: "A47tIVw-ts0",
         title: "Fighting",
         source: "Final Fantasy VII",
         composer: "Nobuo Uematsu",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/3jNvph5ovtM/mqdefault.jpg",
+        urlId: "rocket-jump-waltz",
+        youtubeId: "3jNvph5ovtM",
         title: "Rocket Jump Waltz",
         source: "Team Fortress 2 Official Soundtrack",
         composer: "Mike Morasky",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/-7kwk7RxAYY/mqdefault.jpg",
+        urlId: "sans",
+        youtubeId: "-7kwk7RxAYY",
         title: "sans.",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/-1jOzmNOlpA/mqdefault.jpg",
+        urlId: "dark-darker-yet-darker",
+        youtubeId: "-1jOzmNOlpA",
         title: "Dark, Darker, Yet Darker",
         source: "Fanmade UNDERTALE AU",
         composer: "The Great Anansi",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/FlC51eUBIRM/mqdefault.jpg",
+        urlId: "respite",
+        youtubeId: "FlC51eUBIRM",
         title: "Respite",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/4YklRbdcdT0/mqdefault.jpg",
+        urlId: "spider-dance",
+        youtubeId: "4YklRbdcdT0",
         title: "Spider Dance",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/Eo4vEkao_88/mqdefault.jpg",
+        urlId: "sweet-sugar-love",
+        youtubeId: "Eo4vEkao_88",
         title: "Sweet Sugar Love",
         source: "Phyrnna",
         composer: "Phyrnna",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/vtJiP3aI6IQ/mqdefault.jpg",
+        urlId: "megalo-strike-back",
+        youtubeId: "vtJiP3aI6IQ",
         title: "Megalo Strike Back",
         source: "I Miss You - EarthBound 2012",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/yZprr3ImCiY/mqdefault.jpg",
+        urlId: "song-that-might-play-when-you-fight-sans",
+        youtubeId: "yZprr3ImCiY",
         title: "Song That Might Play When You Fight Sans",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/96KzZ_O_nr8/mqdefault.jpg",
+        urlId: "cold-short-version",
+        youtubeId: "96KzZ_O_nr8",
         title: "Cold (Short Version)",
         source: "RWBY",
         composer: "Jeff Williams",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/wCsCLdepGyQ/mqdefault.jpg",
+        urlId: "ooo",
+        youtubeId: "wCsCLdepGyQ",
         title: "Ooo",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/Q2ED9U5eudI/mqdefault.jpg",
+        urlId: "spooky-scary-skeletons",
+        youtubeId: "Q2ED9U5eudI",
         title: "Spooky Scary Skeletons",
         source: "Halloween Howls",
         composer: "Andrew Gold",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/Zb1K1FZ68zo/mqdefault.jpg",
+        urlId: "memory",
+        youtubeId: "Zb1K1FZ68zo",
         title: "Memory",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/P6lBwJbEWGc/mqdefault.jpg",
+        urlId: "here-we-are",
+        youtubeId: "P6lBwJbEWGc",
         title: "Here We Are",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/V_pKFcImjbg/mqdefault.jpg",
+        urlId: "friendship",
+        youtubeId: "V_pKFcImjbg",
         title: "Friendship",
         source: "toby fox",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/eCX3OkOzR0M/mqdefault.jpg",
+        urlId: "walking-by-the-sea",
+        youtubeId: "eCX3OkOzR0M",
         title: "Walking by the sea",
         source: "Deemo, Vol.2",
         composer: "Edmud Fu",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/mMJN4pcmTcg/mqdefault.jpg",
+        urlId: "stronger-monsters",
+        youtubeId: "mMJN4pcmTcg",
         title: "Stronger Monsters",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/uNIEWzo7Wj4/mqdefault.jpg",
+        urlId: "finale",
+        youtubeId: "uNIEWzo7Wj4",
         title: "Finale",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/PZvk-hz7Ik8/mqdefault.jpg",
+        urlId: "dancing-mad-5th-movement",
+        youtubeId: "PZvk-hz7Ik8",
         title: "Dancing Mad 5th Movement",
         source: "Final Fantasy VI",
         composer: "Nobuo Uematsu",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/dKkRaBwsyBQ/mqdefault.jpg",
+        urlId: "megalovania",
+        youtubeId: "dKkRaBwsyBQ",
         title: "MEGALOVANIA",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/vuAVdxWMPPE/mqdefault.jpg",
+        urlId: "try-everything",
+        youtubeId: "vuAVdxWMPPE",
         title: "Try Everything",
         source: "Zootopia",
         composer: "Shakira",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/X1xltv1OIwM/mqdefault.jpg",
+        urlId: "his-theme",
+        youtubeId: "X1xltv1OIwM",
         title: "His Theme",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/OugKuIXt9ig/mqdefault.jpg",
+        urlId: "its-raining-somewhere-else",
+        youtubeId: "OugKuIXt9ig",
         title: "It's Raining Somewhere Else",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/HtCjh8iZpJI/mqdefault.jpg",
+        urlId: "fallen-down-reprise",
+        youtubeId: "HtCjh8iZpJI",
         title: "Fallen Down (Reprise)",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/kflpz9uU99Q/mqdefault.jpg",
+        urlId: "bergentruckung-asgore",
+        youtubeId: "kflpz9uU99Q",
         title: "Bergentrückung & ASGORE",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/pL-8ChSS4v4/mqdefault.jpg",
+        urlId: "final-power",
+        youtubeId: "pL-8ChSS4v4",
         title: "Final Power",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/yix8tQ13Ohs/mqdefault.jpg",
+        urlId: "run",
+        youtubeId: "yix8tQ13Ohs",
         title: "Run!",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/nMVE_YGD4wg/mqdefault.jpg",
+        urlId: "snowy",
+        youtubeId: "nMVE_YGD4wg",
         title: "Snowy",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/kP2Yt1j5O34/mqdefault.jpg",
+        urlId: "an-ending",
+        youtubeId: "kP2Yt1j5O34",
         title: "An Ending",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/J9-yo3j6erk/mqdefault.jpg",
+        urlId: "sigh-of-dog",
+        youtubeId: "J9-yo3j6erk",
         title: "Sigh of Dog",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/5gMBfKNGXww/mqdefault.jpg",
+        urlId: "snowdin-town",
+        youtubeId: "5gMBfKNGXww",
         title: "Snowdin Town",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/R97Eo63W0l8/mqdefault.jpg",
+        urlId: "anticipation-enemy-approaching",
+        youtubeId: "R97Eo63W0l8",
         title: "Anticipation & Enemy Approaching",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/Yuxees4a4DE/mqdefault.jpg",
+        urlId: "hopes-and-dreams-last-goodbye",
+        youtubeId: "Yuxees4a4DE",
         title: "Hopes and Dreams & Last Goodbye",
         source: "UNDERTALE Soundtrack",
         composer: "toby fox",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/EEl6Cql0LWk/mqdefault.jpg",
+        urlId: "where",
+        youtubeId: "EEl6Cql0LWk",
         title: "Where",
         source: "LyricWulf Original Composition",
         composer: "LyricWulf",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/1NqEVEAgigA/mqdefault.jpg",
+        urlId: "we-are-the-crystal-gems",
+        youtubeId: "1NqEVEAgigA",
         title: "We Are the Crystal Gems",
         source: "Steven Universe",
         composer: "Rebecca Sugar, Aivi & Surasshu",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/vyAY78lb9bU/mqdefault.jpg",
+        urlId: "randall-piano",
+        youtubeId: "vyAY78lb9bU",
         title: "Randall [Piano]",
         source: "Brave Frontier",
         composer: "Hikoshi Hashimoto",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/FcNIleFnRK4/mqdefault.jpg",
+        urlId: "randall-full-score",
+        youtubeId: "FcNIleFnRK4",
         title: "Randall [Full Score]",
         source: "Brave Frontier",
         composer: "Hikoshi Hashimoto",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/-zMlycr-LJo/mqdefault.jpg",
+        urlId: "chasing-cars",
+        youtubeId: "-zMlycr-LJo",
         title: "Chasing Cars",
         source: "Eyes Open",
         composer: "Snow Patrol",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/HOT7YZpl8xM/mqdefault.jpg",
+        urlId: "kimi-wa-wasurerareru-no",
+        youtubeId: "HOT7YZpl8xM",
         title: "Kimi wa Wasurerareru no",
         source: "Shigatsu wa Kimi no Uso (Your Lie in April)",
         composer: "Masaru Yokoyama",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/TrpCK0Q6wAY/mqdefault.jpg",
+        urlId: "sister-rust",
+        youtubeId: "TrpCK0Q6wAY",
         title: "Sister Rust",
         source: "Lucy",
         composer: "Damon Albarn",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/CXqJhS0vmxA/mqdefault.jpg",
+        urlId: "last-battle",
+        youtubeId: "CXqJhS0vmxA",
         title: "Last Battle ",
         source: "Cave Story",
         composer: "Daisuke Amaya",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/f2qlB-kRj5c/mqdefault.jpg",
+        urlId: "blackout",
+        youtubeId: "f2qlB-kRj5c",
         title: "Blackout",
         source: "Hell Is What You Make It",
         composer: "Breathe Carolina",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/Kei-nTdHuaA/mqdefault.jpg",
+        urlId: "home-of-the-blues",
+        youtubeId: "Kei-nTdHuaA",
         title: "Home of the Blues",
         source: "Owl City Cover",
         composer: "Owl City",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/p3-MYUxTsic/mqdefault.jpg",
+        urlId: "rewel",
+        youtubeId: "p3-MYUxTsic",
         title: "ReWel",
         source: "Catalyst",
         composer: "Tristam & Rogue",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/KjdbqrUI-KE/mqdefault.jpg",
+        urlId: "ingame-theme",
+        youtubeId: "KjdbqrUI-KE",
         title: "InGame Theme",
         source: "Castles II: Siege and Conquest",
         composer: "Charles Deenen",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/2SJOboPkRgY/mqdefault.jpg",
+        urlId: "heros-end",
+        youtubeId: "2SJOboPkRgY",
         title: "Hero's End",
         source: "Cave Story",
         composer: "Daisuke Amaya",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/iXndMLBSNGQ/mqdefault.jpg",
+        urlId: "quantus",
+        youtubeId: "iXndMLBSNGQ",
         title: "Quantus",
         source: "LyricWulf Original Composition",
         composer: "LyricWulf",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/z5j_rI3JeSQ/mqdefault.jpg",
+        urlId: "unused-track-1",
+        youtubeId: "z5j_rI3JeSQ",
         title: "Unused Track 1",
         source: "Clannad",
         composer: "Shinji Orito",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/594VKbWySFU/mqdefault.jpg",
+        urlId: "gypsy-dance",
+        youtubeId: "594VKbWySFU",
         title: "Gypsy Dance",
         source: "Joseph Compello",
         composer: "Joseph Compello",
         transcriber: "LyricWulf"
     },
     {
-        img: "https://img.youtube.com/vi/ysWv8SJ0bDk/mqdefault.jpg",
+        urlId: "shy-violet",
+        youtubeId: "ysWv8SJ0bDk",
         title: "Shy Violet",
         source: "All Things Bright and Beautiful",
         composer: "Owl City",
