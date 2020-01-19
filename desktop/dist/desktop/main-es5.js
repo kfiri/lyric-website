@@ -71,7 +71,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div id=\"header-content\" nz-row>\n  <div nz-col nzSpan=\"8\">\n    {{ isFloating ? \"floating\" : \"fixed\" }} Header WOOHOO!!!!!!!!!!!\n  </div>\n  <div nz-col nzSpan=\"8\">\n    <nz-input-group [nzPrefix]=\"suffixIconSearch\">\n      <input type=\"text\" nz-input placeholder=\"Search... (does not work yet)\" />\n    </nz-input-group>\n    <ng-template #suffixIconSearch>\n      <i id=\"suffix-icon-search\" nz-icon nzType=\"search\" (click)=\"log()\"></i>\n    </ng-template>\n  </div>\n  <div nz-col nzSpan=\"8\">Get In Touch!</div>\n</div>\n";
+    __webpack_exports__["default"] = "<div id=\"header-content\" nz-row>\n  <div nz-col nzSpan=\"8\">\n    {{ isFloating ? \"floating\" : \"fixed\" }} Header!\n  </div>\n  <div nz-col nzSpan=\"8\">\n    <nz-input-group [nzPrefix]=\"suffixIconSearch\">\n      <input type=\"text\" nz-input placeholder=\"Search... (does not work yet)\" />\n    </nz-input-group>\n    <ng-template #suffixIconSearch>\n      <i id=\"suffix-icon-search\" nz-icon nzType=\"search\" (click)=\"log()\"></i>\n    </ng-template>\n  </div>\n  <div nz-col nzSpan=\"8\" style=\"text-align: end;\">Get In Touch!</div>\n</div>\n";
     /***/
   },
 
@@ -1059,7 +1059,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "#header-content {\r\n  background: #2378c7;\r\n  color: white;\r\n}\r\n#suffix-icon-search {\r\n  cursor: pointer; \r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaGVhZGVyL2hlYWRlci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsbUJBQW1CO0VBQ25CLFlBQVk7QUFDZDtBQUNBO0VBQ0UsZUFBZTtBQUNqQiIsImZpbGUiOiJzcmMvYXBwL2hlYWRlci9oZWFkZXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiNoZWFkZXItY29udGVudCB7XHJcbiAgYmFja2dyb3VuZDogIzIzNzhjNztcclxuICBjb2xvcjogd2hpdGU7XHJcbn1cclxuI3N1ZmZpeC1pY29uLXNlYXJjaCB7XHJcbiAgY3Vyc29yOiBwb2ludGVyOyBcclxufSJdfQ== */";
+    __webpack_exports__["default"] = "#header-content {\r\n  padding: 0 10px;\r\n  background: #2378c7;\r\n  color: white;\r\n}\r\n#suffix-icon-search {\r\n  cursor: pointer; \r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaGVhZGVyL2hlYWRlci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZUFBZTtFQUNmLG1CQUFtQjtFQUNuQixZQUFZO0FBQ2Q7QUFDQTtFQUNFLGVBQWU7QUFDakIiLCJmaWxlIjoic3JjL2FwcC9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjaGVhZGVyLWNvbnRlbnQge1xyXG4gIHBhZGRpbmc6IDAgMTBweDtcclxuICBiYWNrZ3JvdW5kOiAjMjM3OGM3O1xyXG4gIGNvbG9yOiB3aGl0ZTtcclxufVxyXG4jc3VmZml4LWljb24tc2VhcmNoIHtcclxuICBjdXJzb3I6IHBvaW50ZXI7IFxyXG59Il19 */";
     /***/
   },
 
